@@ -1,0 +1,29 @@
+body { font-family: 'Titillium Web', sans-serif; }
+
+.navbar { height: 118px; }
+.navbar-brand { font-size: 34px; }
+.navbar a.nav-link, .navbar span { font-size: 28px; }
+
+/* section hero */
+section#hero { height: 965px; text-align: center; }
+section#hero .kanan h1 { padding-bottom: 120px; padding-top: 90px; font-weight: bold; }
+section#hero .kanan .form-group { padding-bottom: 20px; text-align: center; justify-content: center; padding-left: 100px; }
+section#hero .kanan .form-group input { padding-left: 50px; font-size: 20px; width: 535px; }
+section#hero .kanan .form-control { height: 50px; border-radius: 30px; }
+section#hero .input-group-append { padding-top: 120px; }
+section#hero button, section#hero .input-group-append a {  height: 55px; width: 350px; background-color: #3A2A67; color: #fff; font-size: 30px; border-radius: 15px; }
+section#hero .kanan p, section#hero .kanan a { font-size: 24px; text-decoration: none; }
+
+
+/* section footer */
+section#footer { height: 420px; background-color:#3A2A67 ; }
+section#footer .kiri { padding-top: 65px; padding-left: 195px; color: #fff; }
+section#footer .kiri h3 { font-size: 34px; padding-bottom: 20px; }
+section#footer .kiri h5 { font-size: 21px; padding-bottom: 20px; }
+section#footer .kiri p { font-size: 16px; padding-bottom: 20px; }
+section#footer .social-media i { letter-spacing: 20px; }
+section#footer .social-media a { text-decoration: none; color: #fff; font-size: 21px; }
+
+section#footer .kanan { padding-top: 130px; padding-left: 160px; color: #fff; }
+section#footer .kanan a { font-size: 21px; text-decoration: none; color: #fff; }
+section#footer .kanan p { font-size: 16px; padding-top: 130px; }

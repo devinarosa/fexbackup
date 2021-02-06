@@ -1,0 +1,350 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;300;400;600;700&display=swap');
+
+*{
+  scroll-behavior: smooth;
+}
+
+a{
+  text-decoration: none;
+  color: black;
+}
+
+body {
+  font-family: "Titillium Web", sans-serif;
+  min-height:100vh;
+}
+
+section#nav {
+  background-color: #3a2a67;
+  font-weight: 500;
+}
+
+/* section hero */
+section#hero button {
+  background-color: #3a2a67;
+  color: white;
+  width: 250px;
+  height: 40px;
+  border-radius: 10px;
+  border: none;
+  padding-top: 5px;
+}
+
+
+
+/* section register */
+section#register { background-color: #3a2a67; }
+section#register button {
+  width: 150px;
+  height: 40px;
+  border-radius: 10px;
+  border: none;
+  padding-top: 5px;
+}
+
+.card {
+  max-width:300px;
+}
+.card img{
+  height: auto;
+  width: 300px;
+}
+
+/* contact */
+section#contact { background-color: #3A2A67; color:white; min-height:200px;}
+
+/* section info */
+section#info .container-xl {
+  padding: 100px 0 0 0;
+}
+
+/* section school */
+section#schools { padding: 80px 0 0 0; }
+section#schools a, section#suggest a { color: black; }
+section#schools .card, section#suggest .card { filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)); }
+
+section#contact { background-color: #3A2A67; color:white; min-height:200px;}
+
+/* responsive embbed */
+.video-container {
+  overflow: hidden;
+  position: relative;
+  width:100%;
+}
+
+.video-container::after {
+  padding-top: 56.25%;
+  display: block;
+  content: '';
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* section footer */
+section#footer { background-color: #3A2A67; color:white; height:auto;}
+section#footer a{ text-decoration: none; color: white; }
+section#footer .margin div{ margin: 25px 0; }
+section#footer .margin i{ margin-right: 12px; }
+
+/* mainImg */
+section#mainImg img{ height: 500px; width: 100%; object-fit: cover;}
+
+/* faislitas */
+section#fasilitas img{ height: 600px; width: 100%; object-fit: cover;}
+
+/* gambarSekolah */
+section#gambar-sekolah img{ height: 500px; width: 100%; object-fit: cover; border-radius: 20px;}
+
+/* mainCarousel */
+section#mainCarousel img{ height: 400px; width: 100%; object-fit: cover; border-radius: 20px;}
+
+
+/* remove ol default padding */
+ol {padding-left: 20px;}
+
+/* SideBar *//*!
+ * Start Bootstrap - Simple Sidebar (https://startbootstrap.com/template/simple-sidebar)
+ * Copyright 2013-2020 Start Bootstrap
+ * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-simple-sidebar/blob/master/LICENSE)
+ */
+
+ #wrapper {
+  overflow-x: hidden;
+}
+
+#sidebar-wrapper {
+min-height: 100vh;
+margin-left: -15rem;
+-webkit-transition: margin .25s ease-out;
+-moz-transition: margin .25s ease-out;
+-o-transition: margin .25s ease-out;
+transition: margin .25s ease-out;
+background-color: #3A2A67;
+}
+
+#sidebar-wrapper .sidebar-heading {
+padding: 0.875rem 1.25rem;
+font-size: 1.2rem;
+}
+
+/* #sidebar-wrapper .list-group {
+width: 100%;
+} */
+
+#page-content-wrapper {
+min-width: 100vw;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+margin-left: 15rem;
+}
+
+#wrapper.toggled #sidebar-wrapper.sidebar-wrapper-vendor {
+  margin-left: 12rem;
+}
+
+#wrapper.toggled #sidebar-wrapper.sidebar-wrapper-vendor2 {
+  margin-left: 6rem;
+}
+
+@media (min-width: 768px) {
+#sidebar-wrapper {
+  margin-left: 0;
+}
+
+#page-content-wrapper {
+  min-width: 0;
+  width: 100%;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+  margin-left: -15rem;
+}
+
+#wrapper.toggled #sidebar-wrapper.sidebar-wrapper-vendor {
+  margin-left: -15rem;
+}
+
+#wrapper.toggled #sidebar-wrapper.sidebar-wrapper-vendor2 {
+  margin-left: -15rem;
+}
+
+}
+
+
+
+
+section#items {
+  margin-top:20px;
+}
+
+
+/* schoolMaincarousel */
+
+.horizontalScroll {
+  display: flex;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  padding: 20px 0;
+}
+
+.item {
+  margin-right: 35px;
+  /* width: 200px; */
+  position: relative;
+}
+
+.more{}
+
+.boothSmallName{
+
+  position: absolute;
+  top: 0%;
+  left: 28%;
+  width: 73%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.schoolCarouselIcon{
+  width: 300px;
+}
+
+
+/* scrollbar */
+::-webkit-scrollbar{
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track{
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb{
+	background-color: #CBCBCB;
+	border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+	background-color: #909090;
+}
+
+@media only screen and (max-width: 575px){
+
+  ::-webkit-scrollbar{
+    display: none;
+  }
+  .schoolCarouselIcon{
+    width: 250px;
+  }
+    /* gambarSekolah */
+  section#gambar-sekolah img{border-radius: 0px;}
+
+  /* mainCarousel */
+  section#mainCarousel img{border-radius: 0px;}
+
+  .title{
+    font-size: 1.5rem;
+  }
+  .more{
+    font-size: 1.25rem;
+  }
+  .horizontalScroll {
+    overflow-x: scroll;
+  }
+}
+
+/* @media only screen and (min-width: 575px){
+  .booth-name{
+    font-size: 2rem;
+  }
+} */
+/* select dashboard admin */
+
+.selectNoArrow {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.selectWrapper{
+  position: relative;
+}
+
+.selectWrapper::after {
+  font-weight: 600;
+  content: '>';
+  transform: rotateZ(90deg);
+  position:absolute;
+  right:30px;
+  top:5px;
+}
+
+/* Section Explore, Livestream, Post (Button) Index */
+
+.kartu {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  transition: .3s ease-in-out;
+}
+ .image_back img {
+  width: 100%;
+  height: 100%;
+  transition: .3s ease-in-out;
+  position: relative;
+}
+ .back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: .3s ease-in-out;
+  opacity: 0;
+}
+ .back a {
+  text-decoration: none;
+  color: #fff;
+  line-height: 150px;
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+}
+ .kartu:hover .image_back img {
+  transform: scale(1.2);
+  transition: .3s ease-in-out;
+}
+.kartu:hover .back {
+  opacity: 1;
+  background-color: rgba(0, 0, 0, .5);
+}
+
+/* registerModal */
+.registerModal button {
+  background-color: #3a2a67;
+  color: white;
+  width: 250px;
+  height: 40px;
+  border-radius: 10px;
+  border: none;
+  padding-top: 5px;
+}
+
+/* schoolFullModal */
+.schoolFullModal .modal-content{
+  background-color: rgba(0, 0, 0, 0);
+  position: relative;
+}
+
+.booth-img{height: 100%; width: 100%; object-fit: cover;}
+
+/* others */

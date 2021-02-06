@@ -1,0 +1,47 @@
+body { font-family: 'Titillium Web', sans-serif; }
+
+.navbar { height: 118px; }
+.navbar-brand { font-size: 34px; }
+.navbar a.nav-link, .navbar span { font-size: 28px; }
+
+/* section hero */
+section#hero { height: 765px; }
+
+/* section register awal */
+section#register { height: 235px; background-color: #3A2A67; text-align: center;}
+section#register p { font-size: 29px; color: white; padding-top: 40px; padding-bottom: 20px;}
+section#register button { width: 370px; height: 55px; border-radius: 10px;  font-size: 29px; }
+
+/* section info */
+section#info { height: 1020px; text-align: center;}
+section#info h1 { padding-top: 90px; font-size: 48px; }
+section#info .row { padding-top: 90px; justify-content: center; margin-left: 50px; margin-right: 50px; }
+section#info .card { height: 585px; width: 405px; background-color: #FFFAFA; border-radius: 30px; border-style: none;}
+section#info img { height: 400px; }
+section#info .card-title { font-size: 35px; padding-left: 55px; text-align: left; }
+section#info .card-text { font-size: 21px; padding-left: 55px; text-align: left;}
+
+/* section schools */
+section#schools { height: 1410px; background-color: grey; }
+section#schools h1 { padding-top: 40px; text-align: center; font-size: 48px; }
+section#schools .row { padding-top: 90px; justify-content: center; margin-left: 50px; margin-right: 50px; }
+section#schools .card { height: 585px; width: 405px; background-color: #FFFAFA; border-radius: 30px; border-style: none;}
+section#schools img { height: 400px; }
+section#schools .card-title { font-size: 29px; padding-left: 55px; text-align: left; }
+
+/* section sponsor */
+section#sponsor { height: 790px; background-color: yellow; text-align: center; }
+section#sponsor h1 { padding-top: 65px; font-size: 48px; }
+
+/* section footer */
+section#footer { height: 420px; background-color:#3A2A67 ; }
+section#footer .kiri { padding-top: 65px; padding-left: 195px; color: #fff; }
+section#footer .kiri h3 { font-size: 34px; padding-bottom: 20px; }
+section#footer .kiri h5 { font-size: 21px; padding-bottom: 20px; }
+section#footer .kiri p { font-size: 16px; padding-bottom: 20px; }
+section#footer .social-media i { letter-spacing: 20px; }
+section#footer .social-media a { text-decoration: none; color: #fff; font-size: 21px; }
+
+section#footer .kanan { padding-top: 130px; padding-left: 160px; color: #fff; }
+section#footer .kanan a { font-size: 21px; text-decoration: none; color: #fff; }
+section#footer .kanan p { font-size: 16px; padding-top: 130px; }
