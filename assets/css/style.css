@@ -32,15 +32,8 @@ section#hero button {
 
 
 
-/* section register */
-section#register { background-color: #3a2a67; }
-section#register button {
-  width: 150px;
-  height: 40px;
-  border-radius: 10px;
-  border: none;
-  padding-top: 5px;
-}
+/* background */
+.bg-purple { background-color: #3a2a67; }
 
 .card {
   max-width:300px;
@@ -278,14 +271,14 @@ section#items {
   position: relative;
 }
 
-.selectWrapper::after {
+/* .selectWrapper::after {
   font-weight: 600;
   content: '>';
   transform: rotateZ(90deg);
   position:absolute;
   right:30px;
   top:5px;
-}
+} */
 
 /* Section Explore, Livestream, Post (Button) Index */
 
@@ -348,3 +341,15 @@ section#items {
 .booth-img{height: 100%; width: 100%; object-fit: cover;}
 
 /* others */
+
+/* arrow controls */
+.fas{
+  cursor: pointer;
+}
+.fa-caret-left{
+  color: lightgray;
+}
+
+.selectCategory {
+  cursor: pointer;
+}

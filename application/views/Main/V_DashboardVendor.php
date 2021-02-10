@@ -159,6 +159,58 @@
                         </div>
                     </div>
                 </div>
+
+                               <!-- Pagination disini -->
+                               <h5 class="my-4 text-right">< Pagination Here ></h5>
+                <!-- end pagination -->
+
+                <div class="row py-5">
+                    <div class="col-md-12 table-responsive m-0 px-3">
+                        <div class="h1 font-weight-bold">Table Data User</div>
+                        <table class="table table-hover table-bordered mt-5">
+                          <thead style="background-color: #3a2a67; color: white;">
+                            <tr>
+                              <th scope="col">No</th>
+                              <th scope="col">Nama</th>
+                              <th scope="col">Email</th>
+                              <th scope="col">Telepon</th>
+                              <th scope="col">Tanggal Lahir</th>
+                              <th scope="col">Alamat</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <th scope="row">1</th>
+                              <td>Dimas Okva</td>
+                              <td>dimasokva@gmail.com</td>
+                              <td>088211234125</td>
+                              <td>18 Oktober 2001</td>
+                              <td>Jl. Tanah Mas A.12</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">2</th>
+                              <td>Cahyo Ade</td>
+                              <td>cahyoade@gmail.com</td>
+                              <td>085601560129</td>
+                              <td>18 Oktober 2001</td>
+                              <td>Jl. Tanah Merah B.12</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">3</th>
+                              <td>Fahima Nabila</td>
+                              <td>fahimanabila@gmail.com</td>
+                              <td>083102021321</td>
+                              <td>18 Oktober 2001</td>
+                              <td>Jl. Tanah Hijau C.12</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <!-- Pagination disini -->
+                        <p class="mt-4">< Pagination Here ></p>
+                        <!-- End Pagination -->
+                    </div>
+                </div>
+
             </div>
         </section>
 

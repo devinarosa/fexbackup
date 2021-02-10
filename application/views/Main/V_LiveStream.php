@@ -36,7 +36,7 @@
             <div class="row my-5 px-3"><div class="h1 font-weight-bold">FEX Livestream</div></div>
             <div class="row py-5 d-flex justify-content-center">
                 <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/4SZEDBFPpgw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/PV0n5bSNRC4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </div>
         </div>

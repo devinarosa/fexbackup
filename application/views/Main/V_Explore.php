@@ -97,7 +97,7 @@
                     </ol>
                     <div class="carousel-inner">
                       <div class="carousel-item active">
-                        <img class="d-block w-100 schoolCarouselImg" src="<?= base_url('assets/')?>img/carousel 1.jpg" alt="First slide">
+                        <img class="d-block w-100 schoolCarouselImg" src="<?= base_url('assets/')?>img/HMS LOGO.jpeg" alt="First slide">
                         <div class="carousel-caption d-none d-md-block my-3">
                             <h1 class="schoolCarouselName font-weight-bold">Nama</h1>
                             <p class="schoolCarouselTagline h4">Opportunities For Lifelong Learning</p>

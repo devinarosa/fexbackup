@@ -123,9 +123,52 @@
                             </div>
                         </div>
                         <div class="row my-3">
-                            <div class="col"><img src="<?= base_url('assets/img')?>/schoolLogo.png" alt="" class="<?= base_url('assets/img')?>-fluid"></div>
-                            <div class="col"><img src="<?= base_url('assets/img')?>/schoolLogo.png" alt="" class="<?= base_url('assets/img')?>-fluid"></div>
-                            <div class="col"><img src="<?= base_url('assets/img')?>/schoolLogo.png" alt="" class="<?= base_url('assets/img')?>-fluid"></div>
+                            <div class="col"><img src="<?= base_url('assets'); ?>/img/HMS LOGO.jpeg" alt="" class="img-fluid"></div>
+                            <div class="col"><img src="<?= base_url('assets'); ?>/img/HMS LOGO.jpeg" alt="" class="img-fluid"></div>
+                            <div class="col"><img src="<?= base_url('assets'); ?>/img/HMS LOGO.jpeg" alt="" class="img-fluid"></div>
+                        </div>
+                        <div class="row"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mb-5">
+                <div class="col-sm-2 mb-4">
+                    <i class="far fa-user fa-3x"></i>
+                </div>
+                <div class="col-sm-10 border rounded">
+                    <div class="container-xl px-4 py-4">
+                        <div class="row">
+                            <div class="col-10 mr-3">
+                            <div class="h3">Category : SD</div>
+                            <div class="small">08/09 13:45</div>
+                            <p class="mt-3 post-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa totam quo repellat atque iste ratione aliquam exercitationem recusandae consequuntur libero.</p>
+                            </div>
+                            <div class="col-1 d-flex justify-content-end">
+                                <div class="dropleft">
+                                    <i class="fas fa-ellipsis-v btn" id="edit" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+                                    <div class="dropdown-menu" aria-labelledby="edit">
+                                        <button class="dropdown-item edit-post" type="button">Edit Post</button>
+                                        <button class="dropdown-item" type="button" data-toggle="modal" data-target="#exampleModalCenter">Delete Post</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                  <div class="modal-content">
+                                    <div class="modal-header d-flex justify-content-center">
+                                      <div class="modal-title text-center f-15 bold" id="exampleModalLongTitle">Hapus Post?</div>
+                                    </div>
+                                    <div class="modal-footer p-0 d-flex justify-content-around">
+                                      <button type="button" class="btn" data-dismiss="modal">Kembali</button>
+                                      <button type="button" class="btn" data-dismiss="modal">Ya</button>
+                                    </div>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row my-3">
+                            <div class="col"><img src="" alt="" class="img-fluid"></div>
                         </div>
                         <div class="row"></div>
                     </div>
@@ -169,9 +212,8 @@
                             </div>
                         </div>
                         <div class="row my-3">
-                            <div class="col"><img src="<?= base_url('assets/img')?>/schoolLogo.png" alt="" class="<?= base_url('assets/img')?>-fluid"></div>
-                            <div class="col"><img src="<?= base_url('assets/img')?>/schoolLogo.png" alt="" class="<?= base_url('assets/img')?>-fluid"></div>
-                            <div class="col"><img src="<?= base_url('assets/img')?>/schoolLogo.png" alt="" class="<?= base_url('assets/img')?>-fluid"></div>
+                            <div class="col"><img src="<?= base_url('assets'); ?>/img/HMS LOGO.jpeg" alt="" class="img-fluid"></div>
+                            <div class="col"><img src="<?= base_url('assets'); ?>/img/HMS LOGO.jpeg" alt="" class="img-fluid"></div>
                         </div>
                         <div class="row"></div>
                     </div>
@@ -209,6 +251,6 @@
     <!-- jQuery and JS bundle w/ Popper.js -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-    <script src="<?= base_url('assets')?>/js/app.js"></script>
+    <script src="<?= base_url('assets')?>/js/postMessage.js"></script>
 </body>
 </html>

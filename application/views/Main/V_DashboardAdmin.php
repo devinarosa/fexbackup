@@ -35,6 +35,7 @@
                     <div class="list-group list-group-flush">
                         <a href="<?= base_url('DashboardAdmin')?>" class="list-group-item list-group-item-action" style="font-size: 18px;"><i class="fas fa-fw fa-home"></i> Dashboard</a>
                         <a href="<?= base_url('DashboardAdmin2')?>" class="list-group-item list-group-item-action" style="font-size: 18px; background-color: #3a2a67; color: white;"><i class="fas fa-fw fa-user"></i> User Management</a>
+                        <a href="<?= base_url('DashboardAdmin3')?>" class="list-group-item list-group-item-action" style="font-size: 18px; background-color: #3a2a67; color: white;"><i class="fas fa-fw fa-edit"></i> Menu Management</a>
                     </div>
                 </div>
             <!-- /#sidebar-wrapper -->
@@ -150,6 +151,53 @@
                             </div>
                         </div>
                     </form>
+
+                    <div class="row px-5 mb-5">
+                        <div class="col-md-12 table-responsive m-0 p-0">
+                        <h4 class="text-center my-3">Tabel Data User</h4>
+                          <table class="table table-hover table-bordered">
+                              <thead style="background-color: #3a2a67; color: white;">
+                                <tr>
+                                  <th scope="col">No</th>
+                                  <th scope="col">Nama</th>
+                                  <th scope="col">Email</th>
+                                  <th scope="col">Telepon</th>
+                                  <th scope="col">Tanggal Lahir</th>
+                                  <th scope="col">Alamat</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <th scope="row">1</th>
+                                  <td>Dimas Okva</td>
+                                  <td>dimasokva@gmail.com</td>
+                                  <td>088211234125</td>
+                                  <td>18 Oktober 2001</td>
+                                  <td>Jl. Tanah Mas A.12</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row">2</th>
+                                  <td>Cahyo Ade</td>
+                                  <td>cahyoade@gmail.com</td>
+                                  <td>085601560129</td>
+                                  <td>18 Oktober 2001</td>
+                                  <td>Jl. Tanah Merah B.12</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row">3</th>
+                                  <td>Fahima Nabila</td>
+                                  <td>fahimanabila@gmail.com</td>
+                                  <td>083102021321</td>
+                                  <td>18 Oktober 2001</td>
+                                  <td>Jl. Tanah Hijau C.12</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                            <!-- Pagination disini -->
+                            <p class="mt-4 text-center">< Pagination Here ></p>
+                            <!-- End Pagination -->
+                        </div>
+                    </div>
 
                 </div>
                

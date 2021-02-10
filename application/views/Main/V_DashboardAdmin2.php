@@ -9,6 +9,12 @@
     <link rel="stylesheet" href="<?= base_url('assets/')?>css/style.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <style>
+        .selected{
+            background-color: #3a2a67;
+            color: whitesmoke;
+        }
+    </style>
 
 </head>
 <body class="d-flex flex-column">
@@ -33,8 +39,9 @@
                 <div class="border-right" id="sidebar-wrapper">
                     <div class="sidebar-heading text-white"><img src="<?= base_url('assets/img')?>/fex1.png" alt=""></div>
                     <div class="list-group list-group-flush">
-                        <a href="<?= base_url('DashboardAdmin')?>" class="list-group-item list-group-item-action" style="font-size: 18px; background-color: #3a2a67; color: white"><i class="fas fa-home"></i> Dashboard</a>
-                        <a href="<?= base_url('DashboardAdmin2')?>" class="list-group-item list-group-item-action" style="font-size: 18px;"><i class="fas fa-user"></i> User Management</a>
+                        <a href="<?= base_url('DashboardAdmin')?>" class="list-group-item list-group-item-action" style="font-size: 18px; background-color: #3a2a67; color: white"><i class="fas fa-fw fa-home"></i> Dashboard</a>
+                        <a href="<?= base_url('DashboardAdmin2')?>" class="list-group-item list-group-item-action" style="font-size: 18px;"><i class="fas fa-fw fa-user"></i> User Management</a>
+                        <a href="<?= base_url('DashboardAdmin3')?>" class="list-group-item list-group-item-action" style="font-size: 18px; background-color: #3a2a67; color: white;"><i class="fas fa-fw fa-edit"></i> Menu Management</a>
                     </div>
                 </div>
             <!-- /#sidebar-wrapper -->
@@ -70,35 +77,75 @@
                                 <small id="emailHelp" class="form-text text-muted pl-4">We'll never share your email with anyone else.</small>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-md-1"></div>
-                            <div class="col-md-1">
-                              <label for="id">Kategori</label>
-                            </div>
-                            <div class="col-md-9 selectWrapper">
-                                <select class="form-control pl-4 selectNoArrow" style="border-radius: 20px;">
-                                    <option>Kategori</option>
-                                    <option>Default select 1</option>
-                                    <option>Default select 2</option>
-                                    <option>Default select 3</option>
-                                    <option>Default select 4</option>
-                                </select>
-                            </div>
-                        </div>
+
                         <div class="row my-4">
                             <div class="col-md-1"></div>
                             <div class="col-md-1">
-                                <label for="alamat">Alamat</label>
+                                <label for="email">Email</label>
                             </div>
                             <div class="col-md-9">
-                                <input type="password" class="form-control pl-4" id="alamat" placeholder="Masukan Alamat" style="border-radius: 20px;">
+                                <input type="email" class="form-control pl-4" id="email" aria-describedby="emailHelp" placeholder="Masukan Email" style="border-radius: 20px;">
                             </div>
                         </div>
+
                         <div class="row">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-1">
+                              <label for="id" class="pt-3">Kategori</label>
+                            </div>
+                            <div class="col-md-9 selectWrapper">
+                                <div class="row pl-0 pl-md-2 kategori" style="font-size: 16px;">
+                                    <!-- looping -->
+                                    <div class="col-md-2 mx-3 mx-md-2  my-2 p-2 rounded text-center selectCategory border"><input type="hidden" name="" id="">Formal</div>
+                                    <div class="col-md-2 mx-3 mx-md-2  my-2 p-2 rounded text-center selectCategory border selected"><input type="hidden" name="" id="">Non-formal</div>
+                                    <div class="col-md-2 mx-3 mx-md-2  my-2 p-2 rounded text-center selectCategory border"><input type="hidden" name="" id="">Vendor</div>
+                                    <div class="col-md-2 mx-3 mx-md-2  my-2 p-2 rounded text-center selectCategory border"><input type="hidden" name="" id="">Lainya</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="row mt-3">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-1">
+                              <label for="id" class="pt-3">Sub-kategori</label>
+                            </div>
+                            <div class="col-md-9 selectWrapper subKategori">
+                                <div class="row pl-0 pl-md-2 Formal d-none" style="font-size: 16px;">
+                                    <!-- looping -->
+                                    <div class="col-md-2 mx-3 mx-md-2  my-2 p-2 rounded selectCategory text-center border selected"><input type="hidden" name="" id="">Paud</div>
+                                    <div class="col-md-2 mx-3 mx-md-2  my-2 p-2 rounded selectCategory text-center border"><input type="hidden" name="" id="">TK</div>
+                                    <div class="col-md-2 mx-3 mx-md-2  my-2 p-2 rounded selectCategory text-center border"><input type="hidden" name="" id="">SD</div>
+                                    <div class="col-md-2 mx-3 mx-md-2  my-2 p-2 rounded selectCategory text-center border"><input type="hidden" name="" id="">SMP</div>
+                                    <div class="col-md-2 mx-3 mx-md-2  my-2 p-2 rounded selectCategory text-center border"><input type="hidden" name="" id="">SMA</div>
+                                    <div class="col-md-2 mx-3 mx-md-2  my-2 p-2 rounded selectCategory text-center border"><input type="hidden" name="" id="">Universitas</div>
+                                </div>
+
+                                <div class="row pl-0 pl-md-2 Non-formal d-none" style="font-size: 16px;">
+                                    <!-- looping -->
+                                    <div class="col-md-2 mx-3 mx-md-2  my-2 p-2 rounded selectCategory text-center border selected"><input type="hidden" name="" id="">Art</div>
+                                    <div class="col-md-2 mx-3 mx-md-2  my-2 p-2 rounded selectCategory text-center border"><input type="hidden" name="" id="">Beladiri</div>
+                                    <div class="col-md-2 mx-3 mx-md-2  my-2 p-2 rounded selectCategory text-center border"><input type="hidden" name="" id="">Music</div>
+                                </div>
+
+                                <div class="row pl-0 pl-md-2 Vendor d-none" style="font-size: 16px;">
+                                    <!-- looping -->
+                                    <div class="col-md-2 mx-3 mx-md-2  my-2 p-2 rounded selectCategory text-center border selected"><input type="hidden" name="" id="">Makanan</div>
+                                    <div class="col-md-2 mx-3 mx-md-2  my-2 p-2 rounded selectCategory text-center border"><input type="hidden" name="" id="">Minuman</div>
+                                    <div class="col-md-2 mx-3 mx-md-2  my-2 p-2 rounded selectCategory text-center border"><input type="hidden" name="" id="">vendor</div>
+                                </div>
+
+                                <div class="row pl-0 pl-md-2 Lainya d-none" style="font-size: 16px;">
+                                    <!-- looping -->
+                                    <div class="col-md-2 mx-3 mx-md-2  my-2 p-2 rounded selectCategory text-center border selected"><input type="hidden" name="" id="">lainya</div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="row mt-4">
                             <div class="col-md-9"></div>
                             <div class="col-md-2">
                                 <button type="submit" class="btn w-100" style="border-radius: 10px; background-color: #3a2a67; color: white;" name="buat">Buat</button>
-
                             </div>
                         </div>
                       </form>
@@ -106,11 +153,13 @@
                       <div class="row my-5 pr-3 pr-sm-0">
                           <div class="col-md-1"></div>
                           <div class="col-md-10 table-responsive">
+                              <h4>Tabel Data Vendor</h4>
                             <table class="table table-hover table-bordered">
                                 <thead style="background-color: #3a2a67; color: white;">
                                   <tr>
                                     <th scope="col">No</th>
                                     <th scope="col">Nama</th>
+                                    <th scope="col">Email</th>
                                     <th scope="col">Kategori</th>
                                     <th scope="col">Alamat</th>
                                     <th scope="col">Status</th>
@@ -119,29 +168,36 @@
                                 <tbody>
                                   <tr>
                                     <th scope="row">1</th>
-                                    <td>Dimas Okva</td>
-                                    <td>Nigga</td>
+                                    <td>SMP Negeri 25 Semarang</td>
+                                    <td>dimasokva@gmail.com</td>
+                                    <td>SMP</td>
                                     <td>Semarang</td>
-                                    <td>High Introvert</td>
+                                    <td class="text-success">Aktif</td>
                                   </tr>
                                   <tr>
                                     <th scope="row">2</th>
-                                    <td>Cahyo Ade</td>
-                                    <td>Java</td>
+                                    <td>SMP Negeri 08 Semarang</td>
+                                    <td>cahyoade@gmail.com</td>
+                                    <td>SMP</td>
                                     <td>Semarang</td>
-                                    <td>Low Introvert</td>
+                                    <td class="text-success">Aktif</td>
                                   </tr>
                                   <tr>
                                     <th scope="row">3</th>
-                                    <td>Fahima Nabila</td>
-                                    <td>Java</td>
+                                    <td>SMP Negeri 02 Semarang</td>
+                                    <td>fahimanabila@gmail.com</td>
+                                    <td>SMP</td>
                                     <td>Semarang</td>
-                                    <td>High Extrovert</td>
+                                    <td class="text-danger">Non-Aktif</td>
                                   </tr>
                                 </tbody>
                               </table>
+                              <!-- Pagination disini -->
+                              <p class="mt-4">< Pagination Here ></p>
+                              <!-- End Pagination -->
                           </div>
                       </div>
+
 
                 </div>
         </div> 
@@ -177,74 +233,32 @@
             e.preventDefault();
             $("#wrapper").toggleClass("toggled");
         });
+        
+        const kategori = document.querySelector('.kategori');
+        const subKategori = document.querySelector('.subKategori');
 
-        var registerPerDay = document.getElementById('registerPerDay').getContext('2d');
-        var chart = new Chart(registerPerDay, {
-        // The type of chart we want to create
-        type: 'line',
+        subKategori.querySelector(`.${kategori.querySelector('.selected').innerText}`).classList.remove('d-none');
 
-        // The data for our dataset
-        data: {
-            labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
-            datasets: [{
-                label: 'Register per Day',
-                borderColor: 'rgb(0, 99, 132)',
-                data: [0, 10, 5, 2, 20, 30, 45, 55, 53, 33]
-            }]
-        },
+        kategori.querySelectorAll('.selectCategory').forEach(i => {
+            i.onclick = e => {
+                kategori.querySelector('.selected').classList.remove('selected');
+                e.target.classList.add('selected');
 
-            // Configuration options go here
-            options: {}
-        });
+                subKategori.childNodes.forEach(a => {
+                    if(a.nodeType == 1){
+                        a.classList.add('d-none');
+                    }
+                    
+                })
+                subKategori.querySelector(`.${kategori.querySelector('.selected').innerText}`).classList.remove('d-none');
+            }    
+        })
 
-        var categoryVendor = document.getElementById('categoryVendor').getContext('2d');
-        var chart = new Chart(categoryVendor, {
-        // The type of chart we want to create
-        type: 'pie',
-
-        // The data for our dataset
-        data: {
-            labels: ['SD', 'SMP', 'SMA', 'Other'],
-            datasets: [{
-                label: 'Register per Day',
-                borderColor: 'white',
-                data: [30, 35, 50, 15],
-                backgroundColor : [
-                    'rgb(100, 220, 245)',
-                    'rgb(80, 120 200)',
-                    'rgb(150, 80, 200)',
-                    'rgb(200, 80, 190)'
-                ]
-            }]
-        },
-
-            // Configuration options go here
-            options: {}
-        });
-
-        var userLogIn = document.getElementById('userLogIn').getContext('2d');
-        var chart = new Chart(userLogIn, {
-        // The type of chart we want to create
-        type: 'bar',
-
-        // The data for our dataset
-        data: {
-            labels: ['Dimas', 'Cahyo', 'Hasna', 'Fahima'],
-            datasets: [{
-                label: 'User Login',
-                borderColor: 'white',
-                data: [30, 25, 20, 15],
-                backgroundColor : [
-                    'rgb(100, 220, 245)',
-                    'rgb(150, 80, 200)',
-                    'rgb(200, 80, 190)'
-                ]
-            }]
-        },
-
-            // Configuration options go here
-            options: {}
-        });
+        subKategori.querySelectorAll('.selectCategory').forEach(i => {
+            i.onclick = e => {
+                e.target.classList.toggle('selected');
+            }
+        })
     </script>
 </body>
 </html>

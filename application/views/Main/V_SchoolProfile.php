@@ -56,13 +56,13 @@
                     </ol>
                     <div class="carousel-inner">
                       <div class="carousel-item active">
-                        <img class="d-block w-100" src="<?= base_url('assets')?>/img/carousel 1.jpg" alt="First slide">
+                        <img class="d-block w-100" src="<?= base_url('assets')?>/img/HMS LOGO.jpeg" alt="First slide">
                       </div>
                       <div class="carousel-item">
-                        <img class="d-block w-100" src="<?= base_url('assets')?>/img/carousel 2.jpg" alt="Second slide">
+                        <img class="d-block w-100" src="<?= base_url('assets')?>/img/HMS LOGO.jpeg" alt="Second slide">
                       </div>
                       <div class="carousel-item">
-                        <img class="d-block w-100" src="<?= base_url('assets')?>/img/carousel 3.jpg" alt="Third slide">
+                        <img class="d-block w-100" src="<?= base_url('assets')?>/img/HMS LOGO.jpeg" alt="Third slide">
                       </div>
                     </div>
                     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -89,17 +89,15 @@
         <div class="container-xl my-5">
             <div class="row">
                 <div class="col-md-6 my-5 d-flex justify-content-center">
-                    <img src="<?= base_url('assets')?>/img/schoolLogo.png" alt="" width="300" height="300">
+                    <img src="<?= base_url('assets'); ?>/img/fex.gif" alt="" width="300" height="300">
                 </div>
                 <div class="col-md-6 my-5 d-flex flex-column justify-content-center">
-                    <div class="h1 mb-3">School Name</div>
-                    <div class="h5 mb-4">Jl. Alamat Alamat no.x kelurahan, kecamatan, kota</div>
+                    <div class="h1 mb-3">HMS Music School</div>
+                    <div class="h5 mb-4">Jl. Atmodirono Raya No.12, Semarang Tengah, Semarang</div>
                     <p class="lead">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur magnam pariatur deserunt 
-                        a dolores minus. Quasi, tempora. Saepe, eaque. Autem quo placeat cumque provident numquam exercitationem quidem 
-                        fuga sit debitis! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas, reprehenderit. Quasi numquam
-                         inventore, odit eos autem omnis iure est illum.
+                        Sekolah Musik Yamaha Internasional yang berdiri di Semarang dan memiliki Sistem Pengajaran Musik Yamaha yang diakui DUNIA.
                     </p>
+                    <h4>"Our Quality is Our Priotity"</h4>
                 </div>
             </div>
         </div>
@@ -109,13 +107,13 @@
         <div class="container-xl my-5 py-5">
             <div class="row d-flex justify-content-center">
                 <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/4SZEDBFPpgw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/PV0n5bSNRC4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="extrakulikuler">
+    <!-- <section id="extrakulikuler">
         <div class="container-xl px-4 my-5 mx-auto">
             <div class="row">
                 <div class="col-md-6 mb-5 d-flex flex-column justify-content-center">
@@ -133,7 +131,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <section id="fasilitas">
         <div class="container-xl d-flex justify-content-center my-5 pt-5">
@@ -143,7 +141,7 @@
         </div>
         <div class="container-xl">
         <div class="row my-5">
-                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <div id="carouselFasilitas" class="carousel slide" data-ride="carousel">
                     <ol class="carousel-indicators">
                       <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                       <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -151,36 +149,36 @@
                     </ol>
                     <div class="carousel-inner">
                       <div class="carousel-item active">
-                        <img class="d-block w-100" src="<?= base_url('assets')?>/img/carousel 1.jpg" alt="First slide">
+                        <img class="d-block w-100" src="<?= base_url('assets'); ?>/img/HMS LOGO.jpeg" alt="First slide">
                         <div class="carousel-caption">
-                            <h5>Fasilitas 1</h5>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            <h5>Piano</h5>
+                            <p>Kursus untuk usia 6 tahun hingga dewasa, dengan metode pendekatan dengan pelatihan pendengaran, lalu secara bertahap membaca not balok.</p>
                         </div>
                       </div>
                       <div class="carousel-item">
-                        <img class="d-block w-100" src="<?= base_url('assets')?>/img/carousel 2.jpg" alt="Second slide">
+                        <img class="d-block w-100" src="<?= base_url('assets'); ?>/img/HMS LOGO.jpeg" alt="Second slide">
                         <div class="carousel-caption">
-                            <h5>Fasilitas 2</h5>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            <h5>Guitar</h5>
+                            <p>Jika anda ingin memainkan lagu favorit yang anda dengar di radio, bergabunglah bersama kami! Kursus ini untuk usia 6 tahun hingga dewasa.</p>
                         </div>
                       </div>
                       <div class="carousel-item">
-                        <img class="d-block w-100" src="<?= base_url('assets')?>/img/carousel 3.jpg" alt="Third slide">
+                        <img class="d-block w-100" src="<?= base_url('assets'); ?>/img/HMS LOGO.jpeg" alt="Third slide">
                         <div class="carousel-caption">
-                            <h5>Fasilitas 3</h5>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            <h5>Drums</h5>
+                            <p>Anda akan belajar rudiments drum yang dibutuhkan untuk membuat anda mahir memainkan drum. Kelas ini untuk usia 6 tahun hingga dewasa.</p>
                         </div>
                       </div>
                     </div>
-                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <a class="carousel-control-prev" href="#carouselFasilitas" role="button" data-slide="prev">
                       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                       <span class="sr-only">Previous</span>
                     </a>
-                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <a class="carousel-control-next" href="#carouselFasilitas" role="button" data-slide="next">
                       <span class="carousel-control-next-icon" aria-hidden="true"></span>
                       <span class="sr-only">Next</span>
                     </a>
-                  </div>
+                </div>
             </div>
         </div>
     </section>
@@ -189,21 +187,22 @@
         <div class="container-xl px-4 my-5 mx-auto">
             <div class="row">
                 <div class="col-md-6 my-5 d-flex justify-content-center">
-                    <img src="<?= base_url('assets')?>/img/schoolLogo.png" alt="" width="300" height="300">
+                    <img src="<?= base_url('assets'); ?>/img/schoolLogo.png" alt="" width="300" height="300">
                 </div>
                 <div class="col-md-6 mb-5 my-4 d-flex flex-column justify-content-center">
-                    <div class="h2 mb-4">Prestasi</div>
-                        <ol>
-                            <li class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
-                            <li class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
-                            <li class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
-                            <li class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
-                            <li class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
-                        </ol>
+                    <div class="h2 mb-4">Fitur Tambahan</div>
+                    <ol>
+                        <li class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+                        <li class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+                        <li class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+                        <li class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+                        <li class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+                    </ol>
                 </div>
             </div>
         </div>
     </section>
+
 
 
     <section id="footer">
@@ -237,6 +236,7 @@
         </div>
     </section>
     <!-- jQuery and JS bundle w/ Popper.js -->
+    <script src="<?= base_url('assets');?>/js/schoolProfile.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
     <script>

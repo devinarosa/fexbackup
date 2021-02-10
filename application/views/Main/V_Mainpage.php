@@ -41,13 +41,13 @@
                     </ol>
                     <div class="carousel-inner">
                       <div class="carousel-item active">
-                        <img class="d-block w-100 schoolCarouselImg" src="<?= base_url('assets')?>/img/carousel 1.jpg" alt="First slide">
+                        <img class="d-block w-100 schoolCarouselImg" src="<?= base_url('assets')?>/img/HMS LOGO.jpeg" alt="First slide">
                       </div>
                       <div class="carousel-item">
-                        <img class="d-block w-100 schoolCarouselImg" src="<?= base_url('assets')?>/img/carousel 2.jpg" alt="Second slide">
+                        <img class="d-block w-100 schoolCarouselImg" src="<?= base_url('assets')?>/img/HMS LOGO.jpeg" alt="Second slide">
                       </div>
                       <div class="carousel-item">
-                        <img class="d-block w-100 schoolCarouselImg" src="<?= base_url('assets')?>/img/carousel 3.jpg" alt="Third slide">
+                        <img class="d-block w-100 schoolCarouselImg" src="<?= base_url('assets')?>/img/HMS LOGO.jpeg" alt="Third slide">
                       </div>
                       <!-- <div class="carousel-item">
                         <div class="container-xl">
@@ -112,160 +112,184 @@
         </div>
     </section>
 
-    <section id="register">
-        <div class="container-fluid pb-5 pt-5">
-            <div class="row d-flex justify-content-center mb-4">
-                <div class="col-sm-12">
-                    <form action="#" method="post">
-                        <div class="form-group d-flex justify-content-center pr-3 pr-sm-0">
-                            <input style="width: 1000px; border-radius: 20px; padding-left: 20px;" type="text" class="form-control border-0" name="email_username" id="email_username" placeholder="Looking for something ? ">
-                            <i class="fas fa-search fa-1x submitButton" style="margin-left: -30px; margin-top: 10px;"></i>
-                        </div>                    
-                    </form> 
-                </div>
-            </div>
+    <section id="search" class="bg-purple">
+        <div class="container-fluid py-5">
             <div class="row d-flex justify-content-center">
-                <div class="text-center"><img src="<?= base_url('assets')?>/img/formal.png" alt=""><h6 class="text-white text-center">Formal</h6></div>
-                <div class="text-center"><img src="<?= base_url('assets')?>/img/non-formal.png" alt=""><h6 class="text-white text-center">Non-formal</h6></div> 
-                <!-- manual width nya yg soon cause resolusi gambar nya beda (soon bakal di resize img-nya) -->
-                <div class="text-center"><img src="<?= base_url('assets')?>/img/soon_1.png" width="115px" style="filter: invert();" alt=""><h6 class="text-white text-center">Soon</h6></div>    
-                <div class="text-center"><img src="<?= base_url('assets')?>/img/soon_1.png" width="115px" style="filter: invert();" alt=""><h6 class="text-white text-center">Soon</h6></div>    
+                <form action="" method="post">
+                    <div class="form-group d-flex justify-content-center pr-3 pr-sm-0">
+                        <input style="width: 1000px; border-radius: 20px; padding-left: 20px;" type="text" class="form-control border-0" name="email_username" id="email_username" placeholder="Looking for something ? ">
+                        <i class="fas fa-search fa-1x submitButton" style="margin-left: -30px; margin-top: 10px;"></i>
+                    </div>                    
+                </form>
             </div>
         </div>
     </section>
+
+    <div class="container-xl py-5" style="filter : invert(1)">
+        <div class="row d-flex justify-content-center">
+            <div class="text-center mx-2"><a href="" class="text-decoration-none"><img src="<?=base_url('assets')?>/img/formal.png" width="115px" alt=""><h6 class="text-white text-center">Formal</h6></a></div>
+            <div class="text-center mx-2"><a href="" class="text-decoration-none"><img src="<?=base_url('assets')?>/img/non formal.png" width="115px" alt=""><h6 class="text-white text-center">Non-formal</h6></a></div> 
+            <div class="text-center mx-2"><a href="" class="text-decoration-none"><img src="<?=base_url('assets')?>/img/fashion icon.png" width="115px" alt=""><h6 class="text-white text-center">Non-formal</h6></a></div>           
+        </div>
+    </div>
     
     <section id="items" class="mb-5">
+
+        <!-- loop sub category -->
         <div class="subCategory p-3 pt-4 px-md-5 pb-md-3">
             <div class="d-flex justify-content-between mb-3">
                 <div class="title h3 font-weight-bold">Sub Category</div>
-                <div class="more h5"><a href="<?= base_url('Explore')?>">more...</a></div>
+                <div class="controls d-flex align-items-center">
+                    <div class="arrow d-none d-md-block mr-5">
+                        <i class="fas fa-caret-left fa-3x mr-4"></i>
+                        <i class="fas fa-caret-right fa-3x"></i>
+                    </div>
+                    <div class="more h5"><a href="<?=  base_url("Explore"); ?>">more...</a></div>
+                </div>
             </div>
+                      
             <div class="horizontalScroll">
 
+                <!-- loop schools -->
                 <div class="item d-flex justify-content-between flex-column align-items-center">
-                    <img src="<?= base_url('assets')?>/img/booth.png" alt="" class="schoolCarouselIcon">
+                    <img src="<?= base_url('assets'); ?>/img/booth.png" alt="" class="schoolCarouselIcon">
                     <div class="boothSmallName">SMK Negeri 7 Semarang</div>
                 </div>
                 <div class="item d-flex justify-content-between flex-column align-items-center">
-                    <img src="<?= base_url('assets')?>/img/booth.png" alt="" class="schoolCarouselIcon">
+                    <img src="<?= base_url('assets'); ?>/img/booth.png" alt="" class="schoolCarouselIcon">
                     <div class="boothSmallName">SMK Negeri 7 Semarang</div>
                 </div>
                 <div class="item d-flex justify-content-between flex-column align-items-center">
-                    <img src="<?= base_url('assets')?>/img/booth.png" alt="" class="schoolCarouselIcon">
+                    <img src="<?= base_url('assets'); ?>/img/booth.png" alt="" class="schoolCarouselIcon">
                     <div class="boothSmallName">SMK Negeri 7 Semarang</div>
                 </div>
                 <div class="item d-flex justify-content-between flex-column align-items-center">
-                    <img src="<?= base_url('assets')?>/img/booth.png" alt="" class="schoolCarouselIcon">
+                    <img src="<?= base_url('assets'); ?>/img/booth.png" alt="" class="schoolCarouselIcon">
                     <div class="boothSmallName">SMK Negeri 7 Semarang</div>
                 </div>
                 <div class="item d-flex justify-content-between flex-column align-items-center">
-                    <img src="<?= base_url('assets')?>/img/booth.png" alt="" class="schoolCarouselIcon">
+                    <img src="<?= base_url('assets'); ?>/img/booth.png" alt="" class="schoolCarouselIcon">
                     <div class="boothSmallName">SMK Negeri 7 Semarang</div>
                 </div>
                 <div class="item d-flex justify-content-between flex-column align-items-center">
-                    <img src="<?= base_url('assets')?>/img/booth.png" alt="" class="schoolCarouselIcon">
+                    <img src="<?= base_url('assets'); ?>/img/booth.png" alt="" class="schoolCarouselIcon">
                     <div class="boothSmallName">SMK Negeri 7 Semarang</div>
                 </div>
                 <div class="item d-flex justify-content-between flex-column align-items-center">
-                    <img src="<?= base_url('assets')?>/img/booth.png" alt="" class="schoolCarouselIcon">
+                    <img src="<?= base_url('assets'); ?>/img/booth.png" alt="" class="schoolCarouselIcon">
                     <div class="boothSmallName">SMK Negeri 7 Semarang</div>
                 </div>
                 <div class="item d-flex justify-content-between flex-column align-items-center">
-                    <img src="<?= base_url('assets')?>/img/booth.png" alt="" class="schoolCarouselIcon">
+                    <img src="<?= base_url('assets'); ?>/img/booth.png" alt="" class="schoolCarouselIcon">
                     <div class="boothSmallName">SMK Negeri 7 Semarang</div>
                 </div>
                 
             </div>
-
         </div>
+
         <div class="subCategory p-3 pt-4 px-md-5 pb-md-3">
             <div class="d-flex justify-content-between mb-3">
                 <div class="title h3 font-weight-bold">Sub Category</div>
-                <div class="more h5"><a href="<?= base_url('Explore')?>">more...</a></div>
+                <div class="controls d-flex align-items-center">
+                    <div class="arrow d-none d-md-block mr-5">
+                        <i class="fas fa-caret-left fa-3x mr-4"></i>
+                        <i class="fas fa-caret-right fa-3x"></i>
+                    </div>
+                    <div class="more h5"><a href="<?=  base_url("Explore"); ?>">more...</a></div>
+                </div>
             </div>
+                      
             <div class="horizontalScroll">
 
+                <!-- loop schools -->
                 <div class="item d-flex justify-content-between flex-column align-items-center">
-                    <img src="<?= base_url('assets')?>/img/booth.png" alt="" class="schoolCarouselIcon">
+                    <img src="<?= base_url('assets'); ?>/img/booth.png" alt="" class="schoolCarouselIcon">
                     <div class="boothSmallName">SMK Negeri 7 Semarang</div>
                 </div>
                 <div class="item d-flex justify-content-between flex-column align-items-center">
-                    <img src="<?= base_url('assets')?>/img/booth.png" alt="" class="schoolCarouselIcon">
+                    <img src="<?= base_url('assets'); ?>/img/booth.png" alt="" class="schoolCarouselIcon">
                     <div class="boothSmallName">SMK Negeri 7 Semarang</div>
                 </div>
                 <div class="item d-flex justify-content-between flex-column align-items-center">
-                    <img src="<?= base_url('assets')?>/img/booth.png" alt="" class="schoolCarouselIcon">
+                    <img src="<?= base_url('assets'); ?>/img/booth.png" alt="" class="schoolCarouselIcon">
                     <div class="boothSmallName">SMK Negeri 7 Semarang</div>
                 </div>
                 <div class="item d-flex justify-content-between flex-column align-items-center">
-                    <img src="<?= base_url('assets')?>/img/booth.png" alt="" class="schoolCarouselIcon">
+                    <img src="<?= base_url('assets'); ?>/img/booth.png" alt="" class="schoolCarouselIcon">
                     <div class="boothSmallName">SMK Negeri 7 Semarang</div>
                 </div>
                 <div class="item d-flex justify-content-between flex-column align-items-center">
-                    <img src="<?= base_url('assets')?>/img/booth.png" alt="" class="schoolCarouselIcon">
+                    <img src="<?= base_url('assets'); ?>/img/booth.png" alt="" class="schoolCarouselIcon">
                     <div class="boothSmallName">SMK Negeri 7 Semarang</div>
                 </div>
                 <div class="item d-flex justify-content-between flex-column align-items-center">
-                    <img src="<?= base_url('assets')?>/img/booth.png" alt="" class="schoolCarouselIcon">
+                    <img src="<?= base_url('assets'); ?>/img/booth.png" alt="" class="schoolCarouselIcon">
                     <div class="boothSmallName">SMK Negeri 7 Semarang</div>
                 </div>
                 <div class="item d-flex justify-content-between flex-column align-items-center">
-                    <img src="<?= base_url('assets')?>/img/booth.png" alt="" class="schoolCarouselIcon">
+                    <img src="<?= base_url('assets'); ?>/img/booth.png" alt="" class="schoolCarouselIcon">
                     <div class="boothSmallName">SMK Negeri 7 Semarang</div>
                 </div>
                 <div class="item d-flex justify-content-between flex-column align-items-center">
-                    <img src="<?= base_url('assets')?>/img/booth.png" alt="" class="schoolCarouselIcon">
+                    <img src="<?= base_url('assets'); ?>/img/booth.png" alt="" class="schoolCarouselIcon">
                     <div class="boothSmallName">SMK Negeri 7 Semarang</div>
                 </div>
                 
             </div>
-
         </div>
+
         <div class="subCategory p-3 pt-4 px-md-5 pb-md-3">
             <div class="d-flex justify-content-between mb-3">
                 <div class="title h3 font-weight-bold">Sub Category</div>
-                <div class="more h5"><a href="<?= base_url('Explore')?>">more...</a></div>
+                <div class="controls d-flex align-items-center">
+                    <div class="arrow d-none d-md-block mr-5">
+                        <i class="fas fa-caret-left fa-3x mr-4"></i>
+                        <i class="fas fa-caret-right fa-3x"></i>
+                    </div>
+                    <div class="more h5"><a href="<?=  base_url("Explore"); ?>">more...</a></div>
+                </div>
             </div>
+                      
             <div class="horizontalScroll">
 
+                <!-- loop schools -->
                 <div class="item d-flex justify-content-between flex-column align-items-center">
-                    <img src="<?= base_url('assets')?>/img/booth.png" alt="" class="schoolCarouselIcon">
+                    <img src="<?= base_url('assets'); ?>/img/booth.png" alt="" class="schoolCarouselIcon">
                     <div class="boothSmallName">SMK Negeri 7 Semarang</div>
                 </div>
                 <div class="item d-flex justify-content-between flex-column align-items-center">
-                    <img src="<?= base_url('assets')?>/img/booth.png" alt="" class="schoolCarouselIcon">
+                    <img src="<?= base_url('assets'); ?>/img/booth.png" alt="" class="schoolCarouselIcon">
                     <div class="boothSmallName">SMK Negeri 7 Semarang</div>
                 </div>
                 <div class="item d-flex justify-content-between flex-column align-items-center">
-                    <img src="<?= base_url('assets')?>/img/booth.png" alt="" class="schoolCarouselIcon">
+                    <img src="<?= base_url('assets'); ?>/img/booth.png" alt="" class="schoolCarouselIcon">
                     <div class="boothSmallName">SMK Negeri 7 Semarang</div>
                 </div>
                 <div class="item d-flex justify-content-between flex-column align-items-center">
-                    <img src="<?= base_url('assets')?>/img/booth.png" alt="" class="schoolCarouselIcon">
+                    <img src="<?= base_url('assets'); ?>/img/booth.png" alt="" class="schoolCarouselIcon">
                     <div class="boothSmallName">SMK Negeri 7 Semarang</div>
                 </div>
                 <div class="item d-flex justify-content-between flex-column align-items-center">
-                    <img src="<?= base_url('assets')?>/img/booth.png" alt="" class="schoolCarouselIcon">
+                    <img src="<?= base_url('assets'); ?>/img/booth.png" alt="" class="schoolCarouselIcon">
                     <div class="boothSmallName">SMK Negeri 7 Semarang</div>
                 </div>
                 <div class="item d-flex justify-content-between flex-column align-items-center">
-                    <img src="<?= base_url('assets')?>/img/booth.png" alt="" class="schoolCarouselIcon">
+                    <img src="<?= base_url('assets'); ?>/img/booth.png" alt="" class="schoolCarouselIcon">
                     <div class="boothSmallName">SMK Negeri 7 Semarang</div>
                 </div>
                 <div class="item d-flex justify-content-between flex-column align-items-center">
-                    <img src="<?= base_url('assets')?>/img/booth.png" alt="" class="schoolCarouselIcon">
+                    <img src="<?= base_url('assets'); ?>/img/booth.png" alt="" class="schoolCarouselIcon">
                     <div class="boothSmallName">SMK Negeri 7 Semarang</div>
                 </div>
                 <div class="item d-flex justify-content-between flex-column align-items-center">
-                    <img src="<?= base_url('assets')?>/img/booth.png" alt="" class="schoolCarouselIcon">
+                    <img src="<?= base_url('assets'); ?>/img/booth.png" alt="" class="schoolCarouselIcon">
                     <div class="boothSmallName">SMK Negeri 7 Semarang</div>
                 </div>
                 
             </div>
+        </div> 
 
-        </div>
-
-</section>
+    </section>
 
     <section id="info">
         <div class="container-xl">
@@ -274,13 +298,13 @@
             </div>
             <div class="row p-4 m-auto">
                 <div class="col-md-4 my-5">
-                    <img src="<?= base_url('assets')?>/img/card.png" alt="" class="img-fluid">
+                    <img src="<?= base_url("assets"); ?>/img/card.png" alt="" class="img-fluid">
                 </div>
                 <div class="col-md-4 my-5">
-                    <img src="<?= base_url('assets')?>/img/card1.png" alt="" class="img-fluid">
+                    <img src="<?= base_url("assets"); ?>/img/card1.png" alt="" class="img-fluid">
                 </div>
                 <div class="col-md-4 my-5">
-                    <img src="<?= base_url('assets')?>/img/card2.png" alt="" class="img-fluid">
+                    <img src="<?= base_url("assets"); ?>/img/card2.png" alt="" class="img-fluid">
                 </div>
             </div>
         </div>
