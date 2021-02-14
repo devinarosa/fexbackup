@@ -23,16 +23,47 @@ class C_View extends CI_CONTROLLER {
         $this->load->view('Main/V_Dashboard');
     }
     public function DashboardAdmin(){
-        $this->load->view('Main/V_DashboardAdmin');
+        $data['title'] = 'Admin | Dashboard';
+        $data['active1'] = 'menu-active';
+        $data['active2'] = 'menu-passive';
+        $data['active3'] = 'menu-passive';
+
+        $this->load->view('Main/V_AdminSidemenu', $data);
+        $this->load->view('Main/V_DashboardAdmin', $data);
+    }
+    public function AdminUserManagement(){
+        $data['title'] = 'Admin | User Management';
+        $data['active1'] = 'menu-passive';
+        $data['active2'] = 'menu-active';
+        $data['active3'] = 'menu-passive';
+
+        $this->load->view('Main/V_AdminSidemenu', $data);
+        $this->load->view('Main/V_DashboardAdminUM', $data);
+    }
+    public function AdminMenuManagement(){
+        $data['title'] = 'Admin | Menu Management';
+        $data['active1'] = 'menu-passive';
+        $data['active2'] = 'menu-passive';
+        $data['active3'] = 'menu-active';
+
+        $this->load->view('Main/V_AdminSidemenu', $data);
+        $this->load->view('Main/V_DashboardAdminMM', $data);
     }
     public function DashboardVendor(){
-        $this->load->view('Main/V_DashboardVendor');
+        $data['title'] = 'Vendor | Dashboard';
+        $data['active1'] = 'menu-active';
+        $data['active2'] = 'menu-passive';
+
+        $this->load->view('Main/V_VendorSidemenu', $data);
+        $this->load->view('Main/V_DashboardVendor', $data);
     }
-    public function DashboardAdmin2(){
-        $this->load->view('Main/V_DashboardAdmin2');
-    }
-    public function DashboardVendor2(){
-        $this->load->view('Main/V_DashboardVendor2');
+    public function VendorEditProfile(){
+        $data['title'] = 'Vendor | Edit Profile';
+        $data['active1'] = 'menu-passive';
+        $data['active2'] = 'menu-active';
+
+        $this->load->view('Main/V_VendorSidemenu', $data);
+        $this->load->view('Main/V_DashboardVendor2', $data);
     }
     public function EditProfile(){
         $this->load->view('Main/V_EditProfile');

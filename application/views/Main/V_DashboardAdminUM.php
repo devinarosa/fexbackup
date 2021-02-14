@@ -1,50 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Management</title>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <link rel="stylesheet" href="<?= base_url('assets/')?>css/style.css">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-    <style>
-        .selected{
-            background-color: #3a2a67;
-            color: whitesmoke;
-        }
-    </style>
-
-</head>
-<body class="d-flex flex-column">
-
-    <section id="nav">
-        <nav class="navbar navbar-expand navbar-dark bg-white">
-            <div class="container-xl">
-                <a class="navbar-brand d-none d-sm-block text-dark" href="<?= base_url('Dashboard')?>">Halmahera Music School</a>
-                <a class="navbar-brand d-block d-sm-none" href="<?= base_url('Dashboard')?>">HMS</a>
-                  <ul class="navbar-nav ml-auto d-flex align-items-center">
-                    <li class="nav-item">
-                        <a  href="<?= base_url('Logout')?>" class="px-3 text-dark pt-1">Logout</a>
-                    </li>
-                  </ul>
-            </div>
-        </nav>
-    </section>
-
-    <div class="d-flex justify-content-center"  id="wrapper">
-
-            <!-- Sidebar -->
-                <div class="border-right" id="sidebar-wrapper">
-                    <div class="sidebar-heading text-white"><img src="<?= base_url('assets/img')?>/fex1.png" alt=""></div>
-                    <div class="list-group list-group-flush">
-                        <a href="<?= base_url('DashboardAdmin')?>" class="list-group-item list-group-item-action" style="font-size: 18px; background-color: #3a2a67; color: white"><i class="fas fa-fw fa-home"></i> Dashboard</a>
-                        <a href="<?= base_url('DashboardAdmin2')?>" class="list-group-item list-group-item-action" style="font-size: 18px;"><i class="fas fa-fw fa-user"></i> User Management</a>
-                        <a href="<?= base_url('DashboardAdmin3')?>" class="list-group-item list-group-item-action" style="font-size: 18px; background-color: #3a2a67; color: white;"><i class="fas fa-fw fa-edit"></i> Menu Management</a>
-                    </div>
-                </div>
-            <!-- /#sidebar-wrapper -->
 
                 <div class="container-xl">
 
@@ -61,10 +15,9 @@
                             <div class="col-md-1"></div>
                               <div class="col-md-1">
                                 <label for="id" class="d-none d-sm-block">ID</label>
-                                <label for="id" class="d-block d-sm-none">ID Tenant</label>
                               </div>
                               <div class="col-md-9">
-                                <input type="text" class="form-control" id="id" disabled style="border-radius: 20px;"> 
+                                <input type="text" class="form-control" id="id_tenant" name="txtIdTenant" disabled style="border-radius: 20px;"> 
                               </div>
                           </div>
                           <div class="row my-4">
@@ -73,8 +26,7 @@
                                 <label for="nama">Nama</label>
                             </div>
                             <div class="col-md-9">
-                                <input type="email" class="form-control pl-4" id="nama" aria-describedby="emailHelp" placeholder="Masukan Nama" style="border-radius: 20px;">
-                                <small id="emailHelp" class="form-text text-muted pl-4">We'll never share your email with anyone else.</small>
+                                <input type="text" class="form-control pl-4" id="nama" name="txtNama" aria-describedby="emailHelp" placeholder="Masukan Nama" style="border-radius: 20px;">
                             </div>
                         </div>
 
@@ -84,7 +36,7 @@
                                 <label for="email">Email</label>
                             </div>
                             <div class="col-md-9">
-                                <input type="email" class="form-control pl-4" id="email" aria-describedby="emailHelp" placeholder="Masukan Email" style="border-radius: 20px;">
+                                <input type="email" class="form-control pl-4" id="email" name="txtEmail" aria-describedby="emailHelp" placeholder="Masukan Email" style="border-radius: 20px;">
                             </div>
                         </div>
 
@@ -96,10 +48,14 @@
                             <div class="col-md-9 selectWrapper">
                                 <div class="row pl-0 pl-md-2 kategori" style="font-size: 16px;">
                                     <!-- looping -->
-                                    <div class="col-md-2 mx-3 mx-md-2  my-2 p-2 rounded text-center selectCategory border"><input type="hidden" name="" id="">Formal</div>
-                                    <div class="col-md-2 mx-3 mx-md-2  my-2 p-2 rounded text-center selectCategory border selected"><input type="hidden" name="" id="">Non-formal</div>
-                                    <div class="col-md-2 mx-3 mx-md-2  my-2 p-2 rounded text-center selectCategory border"><input type="hidden" name="" id="">Vendor</div>
-                                    <div class="col-md-2 mx-3 mx-md-2  my-2 p-2 rounded text-center selectCategory border"><input type="hidden" name="" id="">Lainya</div>
+                                    <div class="col-md-2 mx-3 mx-md-2  my-2 p-2 rounded text-center selectCategory border">
+                                        <input type="hidden" name="txtKategori" id="kategori" value="Formal">Formal</div>
+                                    <div class="col-md-2 mx-3 mx-md-2  my-2 p-2 rounded text-center selectCategory border selected">
+                                        <input type="hidden" name="txtKategori" id="kategori" value="Non-Formal">Non-Formal</div>
+                                    <div class="col-md-2 mx-3 mx-md-2  my-2 p-2 rounded text-center selectCategory border">
+                                        <input type="hidden" name="txtKategori" id="kategori" value="Vendor">Vendor</div>
+                                    <div class="col-md-2 mx-3 mx-md-2  my-2 p-2 rounded text-center selectCategory border">
+                                        <input type="hidden" name="txtKategori" id="kategori" value="Lainnya">Lainya</div>
                                 </div>
                             </div>
                         </div>
@@ -112,31 +68,38 @@
                             <div class="col-md-9 selectWrapper subKategori">
                                 <div class="row pl-0 pl-md-2 Formal d-none" style="font-size: 16px;">
                                     <!-- looping -->
-                                    <div class="col-md-2 mx-3 mx-md-2  my-2 p-2 rounded selectCategory text-center border selected"><input type="hidden" name="" id="">Paud</div>
-                                    <div class="col-md-2 mx-3 mx-md-2  my-2 p-2 rounded selectCategory text-center border"><input type="hidden" name="" id="">TK</div>
-                                    <div class="col-md-2 mx-3 mx-md-2  my-2 p-2 rounded selectCategory text-center border"><input type="hidden" name="" id="">SD</div>
-                                    <div class="col-md-2 mx-3 mx-md-2  my-2 p-2 rounded selectCategory text-center border"><input type="hidden" name="" id="">SMP</div>
-                                    <div class="col-md-2 mx-3 mx-md-2  my-2 p-2 rounded selectCategory text-center border"><input type="hidden" name="" id="">SMA</div>
-                                    <div class="col-md-2 mx-3 mx-md-2  my-2 p-2 rounded selectCategory text-center border"><input type="hidden" name="" id="">Universitas</div>
+                                    <div class="col-md-2 mx-3 mx-md-2  my-2 p-2 rounded selectCategory text-center border selected">
+                                        <input type="hidden" name="txtSubKategori" id="sub_kategori" value="Paud">Paud</div>
+                                    <div class="col-md-2 mx-3 mx-md-2  my-2 p-2 rounded selectCategory text-center border">
+                                        <input type="hidden" name="txtSubKategori" id="sub_kategori" value="TK">TK</div>
+                                    <div class="col-md-2 mx-3 mx-md-2  my-2 p-2 rounded selectCategory text-center border">
+                                        <input type="hidden" name="txtSubKategori" id="sub_kategori" value="SD">SD</div>
+                                    <div class="col-md-2 mx-3 mx-md-2  my-2 p-2 rounded selectCategory text-center border">
+                                        <input type="hidden" name="txtSubKategori" id="sub_kategori" value="SMP">SMP</div>
+                                    <div class="col-md-2 mx-3 mx-md-2  my-2 p-2 rounded selectCategory text-center border">
+                                        <input type="hidden" name="txtSubKategori" id="sub_kategori" value="SMA">SMA</div>
+                                    <div class="col-md-2 mx-3 mx-md-2  my-2 p-2 rounded selectCategory text-center border">
+                                        <input type="hidden" name="txtSubKategori" id="sub_kategori" value="Universitas">Universitas</div>
                                 </div>
 
                                 <div class="row pl-0 pl-md-2 Non-formal d-none" style="font-size: 16px;">
                                     <!-- looping -->
-                                    <div class="col-md-2 mx-3 mx-md-2  my-2 p-2 rounded selectCategory text-center border selected"><input type="hidden" name="" id="">Art</div>
-                                    <div class="col-md-2 mx-3 mx-md-2  my-2 p-2 rounded selectCategory text-center border"><input type="hidden" name="" id="">Beladiri</div>
-                                    <div class="col-md-2 mx-3 mx-md-2  my-2 p-2 rounded selectCategory text-center border"><input type="hidden" name="" id="">Music</div>
+                                    <div class="col-md-2 mx-3 mx-md-2  my-2 p-2 rounded selectCategory text-center border selected"><input type="hidden" name="txtSubKategori" id="sub_kategori" value="Art">Art</div>
+                                    <div class="col-md-2 mx-3 mx-md-2  my-2 p-2 rounded selectCategory text-center border"><input type="hidden" name="txtSubKategori" id="sub_kategori" value="Beladiri">Beladiri</div>
+                                    <div class="col-md-2 mx-3 mx-md-2  my-2 p-2 rounded selectCategory text-center border"><input type="hidden" name="txtSubKategori" id="sub_kategori" value="Music">Music</div>
                                 </div>
 
                                 <div class="row pl-0 pl-md-2 Vendor d-none" style="font-size: 16px;">
                                     <!-- looping -->
-                                    <div class="col-md-2 mx-3 mx-md-2  my-2 p-2 rounded selectCategory text-center border selected"><input type="hidden" name="" id="">Makanan</div>
-                                    <div class="col-md-2 mx-3 mx-md-2  my-2 p-2 rounded selectCategory text-center border"><input type="hidden" name="" id="">Minuman</div>
-                                    <div class="col-md-2 mx-3 mx-md-2  my-2 p-2 rounded selectCategory text-center border"><input type="hidden" name="" id="">vendor</div>
+                                    <div class="col-md-2 mx-3 mx-md-2  my-2 p-2 rounded selectCategory text-center border selected"><input type="hidden" name="txtSubKategori" id="sub_kategori" value="Makanan">Makanan</div>
+                                    <div class="col-md-2 mx-3 mx-md-2  my-2 p-2 rounded selectCategory text-center border"><input type="hidden" name="txtSubKategori" id="sub_kategori" value="Minuman">Minuman</div>
+                                    <div class="col-md-2 mx-3 mx-md-2  my-2 p-2 rounded selectCategory text-center border"><input type="hidden" name="txtSubKategori" id="sub_kategori" value="Vendor">vendor</div>
                                 </div>
 
                                 <div class="row pl-0 pl-md-2 Lainya d-none" style="font-size: 16px;">
                                     <!-- looping -->
-                                    <div class="col-md-2 mx-3 mx-md-2  my-2 p-2 rounded selectCategory text-center border selected"><input type="hidden" name="" id="">lainya</div>
+                                    <div class="col-md-2 mx-3 mx-md-2  my-2 p-2 rounded selectCategory text-center border selected"><input type="hidden" name="txtSubKategori" id="sub_kategori" value="Lainnya">lainya</div>
+                                    <div class="col-md-2 mx-3 mx-md-2  my-2 p-2 rounded selectCategory text-center border selected"><input type="text" name="txtSubKategori" class="form-control" placeholder="Input Kategori" id="sub_kategori" value=""></div>
                                 </div>
                             </div>
                         </div>
