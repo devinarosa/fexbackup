@@ -2,6 +2,27 @@
 
                 <div class="container-xl">
 
+                    <section id="nav">
+                        <nav class="navbar navbar-expand navbar-dark bg-white">
+                            <div class="container-xl">
+                                <a class="navbar-brand d-none d-sm-block text-dark" href="<?= base_url('Dashboard')?>">Halmahera Music School</a>
+                                <a class="navbar-brand d-block d-sm-none text-dark" href="<?= base_url('Dashboard')?>">HMS</a>
+                                <ul class="navbar-nav ml-auto d-flex align-items-center">
+                                    <li class="nav-item dropdown">
+                                        <!-- <a  href="#" class="dropdown-toggle px-3 text-dark pt-1" id="userMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">username</a> -->
+                                        <a class="dropdown-toggle text-muted px-3 waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="<?= base_url('assets/'); ?>img/sekolah 1.png" alt="user" class="img-circle" width="50"></a>
+                                        <div class="dropdown-menu" aria-labelledby="userMenu" style="transform: translate(-50%, 0)">
+                                            <a  href="<?= base_url('AdminUserManagement')?>" class="btn dropdown-item" >User Management</a>
+                                            <a href="<?= base_url('AdminMenuManagement')?>" class="btn dropdown-item">Menu Management</a>
+                                            <div class="dropdown-divider"></div>
+                                            <button class="dropdown-item" type="button"><a href="index.html" class="text-decoration-none text-dark">Logout</a></button>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </section>
+
                     <button style="width: 200px; border-radius: 10px; border: none; background-color: #3a2a67;" class="btn btn-outline-dark text-white ml-md-4 mt-3" id="menu-toggle">Admin Menu</button>
                     
                     <div class="row">
@@ -117,7 +138,7 @@
                           <div class="col-md-1"></div>
                           <div class="col-md-10 table-responsive">
                               <h4>Tabel Data Vendor</h4>
-                            <table class="table table-hover table-bordered">
+                            <table class="table table-hover table-bordered" id="table">
                                 <thead style="background-color: #3a2a67; color: white;">
                                   <tr>
                                     <th scope="col">No</th>
@@ -155,9 +176,6 @@
                                   </tr>
                                 </tbody>
                               </table>
-                              <!-- Pagination disini -->
-                              <p class="mt-4">< Pagination Here ></p>
-                              <!-- End Pagination -->
                           </div>
                       </div>
 
@@ -191,7 +209,14 @@
     <!-- jQuery and JS bundle w/ Popper.js -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/dataTables.bootstrap4.min.js"></script>
+    
     <script>
+        $(document).ready(function() {
+            $('#table').DataTable();
+        } );
+
         $("#menu-toggle").click(function(e) {
             e.preventDefault();
             $("#wrapper").toggleClass("toggled");

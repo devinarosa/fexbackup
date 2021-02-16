@@ -1,4 +1,25 @@
-<div class="container-xl">
+                <div class="container-xl">
+
+                  <section id="nav">
+                        <nav class="navbar navbar-expand navbar-dark bg-white">
+                            <div class="container-xl">
+                                <a class="navbar-brand d-none d-sm-block text-dark" href="<?= base_url('Dashboard')?>">Halmahera Music School</a>
+                                <a class="navbar-brand d-block d-sm-none text-dark" href="<?= base_url('Dashboard')?>">HMS</a>
+                                <ul class="navbar-nav ml-auto d-flex align-items-center">
+                                    <li class="nav-item dropdown">
+                                        <!-- <a  href="#" class="dropdown-toggle px-3 text-dark pt-1" id="userMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">username</a> -->
+                                        <a class="dropdown-toggle text-muted px-3 waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="<?= base_url('assets/'); ?>img/sekolah 1.png" alt="user" class="img-circle" width="50"></a>
+                                        <div class="dropdown-menu" aria-labelledby="userMenu" style="transform: translate(-50%, 0)">
+                                            <a  href="<?= base_url('AdminUserManagement')?>" class="btn dropdown-item" >User Management</a>
+                                            <a href="<?= base_url('AdminMenuManagement')?>" class="btn dropdown-item">Menu Management</a>
+                                            <div class="dropdown-divider"></div>
+                                            <button class="dropdown-item" type="button"><a href="index.html" class="text-decoration-none text-dark">Logout</a></button>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </section>
 
                     <button style="width: 200px; border-radius: 10px; border: none; background-color: #3a2a67;" class="btn btn-outline-dark text-white ml-md-4 mt-3" id="menu-toggle">Admin Menu</button>
                     
@@ -8,14 +29,15 @@
                         </div>
                     </div>                      
 
-                      <div class="row my-3 ml-2 pr-sm-0">
-                          <div class="col-md-11 table-responsive">
+                    <div class="row my-3 mb-5 ml-2 pr-sm-0 mr-2">
+                          <div class="col-md-12 table-responsive">
                               <h5>Category List</h5>
-                            <table class="table table-hover table-bordered">
+                            <table class="table table-hover table-bordered" id="table">
                                 <thead style="background-color: #3a2a67; color: white;">
                                   <tr>
                                     <th scope="col">No</th>
                                     <th scope="col">Kategori</th>
+                                    <th scope="col">Sub - Kategori</th>
                                     <th scope="col">Icon</th>
                                     <th scope="col" class="text-center">Action</th>
                                   </tr>
@@ -24,7 +46,15 @@
                                   <tr>
                                     <th scope="row">1</th>
                                     <td>Formal</td>
-                                    <td>icon formal copy.jpg</td>
+                                    <td>
+                                      <p class="btn bg-purple text-white">Paud</p>
+                                      <p class="btn bg-purple text-white">TK</p>
+                                      <p class="btn bg-purple text-white">SD</p>
+                                      <p class="btn bg-purple text-white">SMP</p>
+                                      <p class="btn bg-purple text-white">SMA</p>
+                                      <p class="btn bg-purple text-white">Universitas</p>
+                                    </td>
+                                    <td class="text-center"><img src="<?= base_url('assets/'); ?>img/formal.png" width="75px" alt="" style="filter : invert(1)"></td>
                                     <td class="text-center">
                                         <a href="" class="fas fa-fw fa-edit"></a>
                                         <a href="" class="fas fa-fw fa-trash"></a>
@@ -33,7 +63,12 @@
                                   <tr>
                                     <th scope="row">2</th>
                                     <td>Non-Formal</td>
-                                    <td>icon formal copy.jpg</td>
+                                    <td>
+                                      <p class="btn bg-purple text-white">Art</p>
+                                      <p class="btn bg-purple text-white">Beladiri</p>
+                                      <p class="btn bg-purple text-white">Music</p>
+                                    </td>
+                                    <td class="text-center"><img src="<?= base_url('assets/'); ?>img/non formal.png" width="75px" alt="" style="filter : invert(1)"></td>
                                     <td class="text-center">
                                         <a href="" class="fas fa-fw fa-edit"></a>
                                         <a href="" class="fas fa-fw fa-trash"></a>
@@ -42,7 +77,12 @@
                                   <tr>
                                     <th scope="row">3</th>
                                     <td>Others</td>
-                                    <td>icon formal copy.jpg</td>
+                                    <td>
+                                      <p class="btn bg-purple text-white">Makanan</p>
+                                      <p class="btn bg-purple text-white">Minuman</p>
+                                      <p class="btn bg-purple text-white">vendor</p>
+                                    </td>
+                                    <td class="text-center"><img src="<?= base_url('assets/'); ?>img/fashion icon.png" width="75px" alt="" style="filter : invert(1)"></td>
                                     <td class="text-center">
                                         <a href="" class="fas fa-fw fa-edit"></a>
                                         <a href="" class="fas fa-fw fa-trash"></a>
@@ -52,47 +92,6 @@
                               </table>
                           </div>
                       </div>
-
-                      <div class="row my-3 ml-2 pr-sm-0">
-                        <div class="col-md-11 table-responsive">
-                            <h5>Sub-Category List</h5>
-                          <table class="table table-hover table-bordered">
-                              <thead style="background-color: #3a2a67; color: white;">
-                                <tr>
-                                  <th scope="col">No</th>
-                                  <th scope="col">Sub Kategori</th>
-                                  <th scope="col" class="text-center">Action</th>
-                                </tr>
-                              </thead>
-                              <tbody>
-                                <tr>
-                                  <th scope="row">1</th>
-                                  <td>SD</td>
-                                  <td class="text-center">
-                                      <a href="" class="fas fa-fw fa-edit"></a>
-                                      <a href="" class="fas fa-fw fa-trash"></a>
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <th scope="row">2</th>
-                                  <td>SMP</td>
-                                  <td class="text-center">
-                                      <a href="" class="fas fa-fw fa-edit"></a>
-                                      <a href="" class="fas fa-fw fa-trash"></a>
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <th scope="row">3</th>
-                                  <td>SMA</td>
-                                  <td class="text-center">
-                                      <a href="" class="fas fa-fw fa-edit"></a>
-                                      <a href="" class="fas fa-fw fa-trash"></a>
-                                  </td>
-                                </tr>
-                              </tbody>
-                            </table>
-                        </div>
-                    </div>
 
                 </div>
         </div> 
@@ -123,7 +122,14 @@
     <!-- jQuery and JS bundle w/ Popper.js -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/dataTables.bootstrap4.min.js"></script>
+
     <script>
+          $(document).ready(function() {
+            $('#table').DataTable();
+        } );
+
         $("#menu-toggle").click(function(e) {
             e.preventDefault();
             $("#wrapper").toggleClass("toggled");
