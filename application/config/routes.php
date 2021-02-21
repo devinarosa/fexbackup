@@ -53,10 +53,10 @@ $route['default_controller'] = 'C_View';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
+$route['Auth'] = 'C_View/Auth';
 $route['index'] = 'C_View/index';
 // $route['Login'] = 'C_View/Login';
 // $route['Login/(:any)'] = 'C_View/$1';
-
 $route['ajax/(:any)'] = 'C_View/$1';
 $route['(:any)'] = 'C_View/$1';
 $route['(:any)/(:any)'] = 'C_View/$1/$2'; 

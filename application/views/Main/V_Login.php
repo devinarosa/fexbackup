@@ -35,12 +35,12 @@
                 <div class="col-md-6 mt-sm-5 d-flex flex-column align-items-center justify-content-center">
                     <h2 class="my-5 py-sm-3 text-center font-weight-bold">Log In</h2>
                     <img src="<?= base_url('assets')?>/img/fex.png" alt="" class="img-fluid p-5 mb-5 d-md-none">
-                    <form action="<?= base_url('Dashboard')?>" class="py-5 w-75" method="post">
+                    <form action="<?= base_url('Auth')?>" method="POST" class="py-5 w-75">
                         <div class="form-group d-flex justify-content-center">
-                            <input style="width:100%; max-width: 400px; border-radius: 20px; padding-left: 20px;" type="text" class="form-control" name="email_username" id="email_username" placeholder="Username / Email">
+                            <input style="width:100%; max-width: 400px; border-radius: 20px; padding-left: 20px;" type="text" class="form-control" name="txtUsernameFex" id="email_username" placeholder="Username / Email">
                         </div>      
                         <div class="form-group d-flex justify-content-center pb-sm-4">
-                            <input style="width:100%; max-width: 400px; border-radius: 20px; padding-left: 20px; margin-left: -10px;" type="password" class="form-control" name="password" id="password" placeholder="Password">
+                            <input style="width:100%; max-width: 400px; border-radius: 20px; padding-left: 20px; margin-left: -10px;" type="password" class="form-control" name="txtPasswordFex" id="password" placeholder="Password">
                             <i class="far fa-eye" style="margin-left: -30px; margin-top: 10px; cursor: pointer;" id="togglePassword"></i>
                         </div>                
                             <div class="input-group-append d-flex justify-content-center mt-5 pt-sm-5">
@@ -82,7 +82,7 @@
     <!-- Optional JavaScript; choose one of the two! -->
 
     <script>
-        var base_url = '<?= base_url('')?>'
+        var baseurl = '<?= base_url('')?>'
         const togglePassword = document.querySelector('#togglePassword');
         const password = document.querySelector('#password');
 
@@ -94,11 +94,11 @@
             this.classList.toggle('fa-eye-slash');
         });
 
-        // button redirect
-        document.querySelector('button').onclick = e => {
-            e.preventDefault();
-            window.location.replace(base_url+'Dashboard')
-        }
+        // // button redirect
+        // document.querySelector('button').onclick = e => {
+        //     e.preventDefault();
+        //     window.location.replace(baseurl+'Auth')
+        // }
     </script>
 
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->

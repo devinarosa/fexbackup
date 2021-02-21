@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link rel="stylesheet" href="<?= base_url('assets'); ?>/css/style.css">
     <link rel="stylesheet" href="<?= base_url('assets'); ?>/css/loggedIn.css">
-    <script src="<?= base_url('assets');?>/js/loggedIn.js"></script>
+    <!-- <script src="<?= base_url('assets');?>/js/loggedIn.js"></script> -->
 
     <style>
         .modal-dialog{
@@ -68,15 +68,38 @@
                 <a class="navbar-brand d-none d-sm-block" href="<?= base_url('Dashboard')?>">Halmahera Music School</a>
                 <a class="navbar-brand d-block d-sm-none" href="<?= base_url('Dashboard')?>">HMS</a>
                   <ul class="navbar-nav ml-auto d-flex align-items-center">
-                    <li class="nav-item dropdown">
-                        <a  href="#" class="dropdown-toggle px-3 text-white pt-1" id="userMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Username</a>
+                    <!-- <li class="nav-item dropdown">
+                        <a  href="#" class="dropdown-toggle px-3 text-white pt-1" id="userMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?= $diri['name']?></a>
                         <div class="dropdown-menu" aria-labelledby="userMenu">
                             <a  href="<?= base_url('PostMessage') ?>" class="btn dropdown-item" >Post Message</a>
                             <a href="<?= base_url('EditProfile') ?>" class="btn dropdown-item">Edit profil</a>
                             <div class="dropdown-divider"></div>
                             <button class="dropdown-item" type="button"><a href="<?= base_url('Logout') ?>" class="text-decoration-none text-dark">Logout</a></button>
                         </div>
-                    </li>
+                    </li> -->
+
+                    <?php $profile=''; if($diri['access_id'] == '1'){
+                        $profile = '<a class="dropdown-toggle text-muted px-3 waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="assets/img/roles/admin.jpg" alt="user" class="img-circle" width="50"></a>';
+                        $link = '<a href="DashboardAdmin">';
+                    }elseif ($diri['access_id'] == '2') {
+                        $profile = '<a class="dropdown-toggle text-muted px-3 waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="<?= base_url("assets/"); ?>img/roles/vendor.jpg" alt="user" class="img-circle" width="50"></a>';
+                        $link = '<a href="DashboardVendor">';
+                    }elseif ($diri['access_id'] == '3') {
+                        $profile = '<a class="dropdown-toggle text-muted px-3 waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="<?= base_url("assets/"); ?>img/roles/tenant.jpg" alt="user" class="img-circle" width="50"></a>';
+                        $link = '<a href="DashboardVendor">';
+                    }elseif ($diri['access_id'] == '4') {
+                        $profile = '<a class="dropdown-toggle text-muted px-3 waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="<?= base_url("assets/"); ?>img/roles/user.jpg" alt="user" class="img-circle" width="50"></a>';
+                        $link = '<a href="Dashboard">';
+                    } ?>
+
+                    <li class="nav-item dropdown">
+                        <?= $link?>
+                                        <?= $profile;?>
+                                        <div class="dropdown-menu" aria-labelledby="userMenu" style="transform: translate(-50%, 0)">
+                                            <button class="dropdown-item" type="button"><a href="index.html" class="text-decoration-none text-dark">Logout</a></button>
+                                        </div>
+                                    </li>
+                        </a>
                   </ul>
             </div>
         </nav>
@@ -398,9 +421,9 @@
         // ADD CLOSE BUTTON
         var added = false;
         var body = document.querySelector('body');
-        const config = { attributes: true, childlist : true, subtree : true};
+        const config2 = { attributes: true, childlist : true, subtree : true};
 
-        const observer = new MutationObserver((a, b) => {
+        const observer2 = new MutationObserver((a, b) => {
             if(!added){
             added = true;
             const backdrop = document.querySelector('.schoolFullModal');
@@ -420,7 +443,7 @@
             }
         });
 
-        observer.observe(body, config);
+        observer2.observe(body, config2);
     </script>
     <!-- Option 2: jQuery, Popper.js, and Bootstrap JS -->
     <script src="<?= base_url('assets');?>/js/loggedIn.js"></script>

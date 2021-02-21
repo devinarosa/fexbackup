@@ -145,3 +145,26 @@
             </div>
         </div>
     <!-- /#sidebar-wrapper -->
+
+    <div class="container-xl">
+
+        <section id="nav">
+            <nav class="navbar navbar-expand navbar-dark bg-white">
+                <div class="container-xl">
+                    <a class="navbar-brand d-none d-sm-block text-dark" href="<?= base_url('Dashboard')?>">Halmahera Music School</a>
+                    <a class="navbar-brand d-block d-sm-none text-dark" href="<?= base_url('Dashboard')?>">HMS</a>
+                    <ul class="navbar-nav ml-auto d-flex align-items-center">
+                        <li class="nav-item dropdown">
+                        <a class="dropdown-toggle text-muted px-3 waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="<?= base_url('assets/'); ?>img/sekolah 1.png" alt="user" class="img-circle" width="50"></a>
+                        <div class="dropdown-menu" aria-labelledby="userMenu" style="transform: translate(-50%, 0)">
+                            <a  href="<?= base_url('VendorEditProfile')?>" class="btn dropdown-item" >Edit Profile</a>
+                        <div class="dropdown-divider"></div>
+                        <button class="dropdown-item" type="button"><a href="index.html" class="text-decoration-none text-dark">Logout</a></button>
+                        </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </section>
+
+        <button style="width: 200px; border-radius: 10px; border: none; background-color: #3a2a67;" class="btn btn-outline-dark text-white ml-4 mt-3" id="menu-toggle">Admin Menu</button>

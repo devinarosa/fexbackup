@@ -1,43 +1,20 @@
-    <div class="container-xl">
-
-        <section id="nav">
-            <nav class="navbar navbar-expand navbar-dark bg-white">
-                <div class="container-xl">
-                    <a class="navbar-brand d-none d-sm-block text-dark" href="<?= base_url('Dashboard')?>">Halmahera Music School</a>
-                    <a class="navbar-brand d-block d-sm-none text-dark" href="<?= base_url('Dashboard')?>">HMS</a>
-                    <ul class="navbar-nav ml-auto d-flex align-items-center">
-                        <li class="nav-item dropdown">
-                        <a class="dropdown-toggle text-muted px-3 waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="<?= base_url('assets/'); ?>img/sekolah 1.png" alt="user" class="img-circle" width="50"></a>
-                        <div class="dropdown-menu" aria-labelledby="userMenu" style="transform: translate(-50%, 0)">
-                            <a  href="<?= base_url('VendorEditProfile')?>" class="btn dropdown-item" >Edit Profile</a>
-                        <div class="dropdown-divider"></div>
-                        <button class="dropdown-item" type="button"><a href="index.html" class="text-decoration-none text-dark">Logout</a></button>
-                        </div>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </section>
-
-        <button style="width: 200px; border-radius: 10px; border: none; background-color: #3a2a67;" class="btn btn-outline-dark text-white ml-4 mt-3" id="menu-toggle">Admin Menu</button>
-
-        <section id="dashboard" class="flex-grow-1">
+    <section id="dashboard" class="flex-grow-1">
             <div class="container-xl my-5 p-3">
-                <div class="row"><div class="h1 font-weight-bold px-4">SD Negeri Sang Utara 02</div></div>
+                <div class="row"><div class="h1 font-weight-bold px-4"><?= $org[0]['fullname']?></div></div>
                 <div class="row mt-5">
                     <div class="col-md-6 d-flex flex-column align-items-center">
-                        <div class="row mt-5"><img src="<?= base_url('assets/')?>img/schoolLogo.png" alt="" width="300"></div>
+                        <div class="row mt-5"><img src="<?= base_url('assets/')?>img/roles/<?= $org[0]['logo']?>" alt="" width="300"></div>
                         <!-- <div class="row mt-4"><div class="btn btn-lg btn-light">Ubah Profil</div></div> -->
                     </div>
                     <div class="col-md-6">
                         <div class="container-xl">
                             <div class="row d-flex flex-column mt-5 bg-light rounded p-4">
                                 <div class="h2 font-weight-bold">Total Pengunjung</div>
-                                <p class="h3"><span class="display-1">3456</span> Orang</p>
+                                <p class="h3"><span class="display-1">0</span> Orang</p>
                             </div>
                             <div class="row d-flex flex-column mt-5 bg-light rounded p-4">
                                 <div class="h2 font-weight-bold">Pengunjung Tertarik</div>
-                                <p class="h3"><span class="display-1">756</span> Orang</p>
+                                <p class="h3"><span class="display-1">0</span> Orang</p>
                             </div>
                         </div>
                     </div>
@@ -140,9 +117,6 @@
                     </div>
                 </div>
 
-                               <!-- Pagination disini -->
-                               <h5 class="my-4 text-right">< Pagination Here ></h5>
-                <!-- end pagination -->
 
                 <div class="row py-5">
                     <div class="col-md-12 table-responsive m-0 px-3">
@@ -159,35 +133,9 @@
                             </tr>
                           </thead>
                           <tbody>
-                            <tr>
-                              <th scope="row">1</th>
-                              <td>Dimas Okva</td>
-                              <td>dimasokva@gmail.com</td>
-                              <td>088211234125</td>
-                              <td>18 Oktober 2001</td>
-                              <td>Jl. Tanah Mas A.12</td>
-                            </tr>
-                            <tr>
-                              <th scope="row">2</th>
-                              <td>Cahyo Ade</td>
-                              <td>cahyoade@gmail.com</td>
-                              <td>085601560129</td>
-                              <td>18 Oktober 2001</td>
-                              <td>Jl. Tanah Merah B.12</td>
-                            </tr>
-                            <tr>
-                              <th scope="row">3</th>
-                              <td>Fahima Nabila</td>
-                              <td>fahimanabila@gmail.com</td>
-                              <td>083102021321</td>
-                              <td>18 Oktober 2001</td>
-                              <td>Jl. Tanah Hijau C.12</td>
-                            </tr>
+                            
                           </tbody>
                         </table>
-                        <!-- Pagination disini -->
-                        <p class="mt-4">< Pagination Here ></p>
-                        <!-- End Pagination -->
                     </div>
                 </div>
 
