@@ -91,7 +91,7 @@
                                                 </div>      
                             <div class="pt-5 d-flex flex-column align-items-center">
                                 <button style="width: 300px; border-radius: 10px; border: none; background-color: #3a2a67;" class="btn btn-outline-dark text-white" type="submit" name="submit" id="button-addon2"><i class="fas fa-sign-in-alt mx-1"></i> Log In</button>
-                                <button style="width: 300px; border-radius: 10px; border: none; background-color: #3a2a67;" class="btn btn-outline-dark text-white mt-2 " type="submit" name="submit" id="g-signin"><i class="fab fa-fw fa-google mx-1"></i> Google</button>
+                                <div style="width: 300px; border-radius: 10px; border: none; background-color: #3a2a67;" class="btn btn-outline-dark text-white mt-2 " id="g-signin"><i class="fab fa-fw fa-google mx-1"></i> Google</div>
                             </div>
                             <p class="justify-content-center mt-4 d-none d-sm-flex">Doesn’t have an account? Sign Up<a href="<?= base_url('Register')?>" class="pl-1 text-decoration-none">here</a></p>                    
                             <p class="justify-content-center mt-4 d-flex d-sm-none">Doesn’t have an account? <a href="<?= base_url('Register')?>" class="pl-1 text-decoration-none">here</a></p>                    
