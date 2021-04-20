@@ -1,66 +1,60 @@
                         <div class="row">
                         <div class="col-md-11 my-3 ml-md-4">
-                            <p class="h3">Menu Management</p>
+                            <p class="h3">Ekspor Impor</p>
                         </div>
                     </div>                      
 
                     <div class="row my-3 mb-5 ml-2 pr-sm-0 mr-2">
                           <div class="col-md-12 table-responsive">
-                              <h5>Category List</h5>
+                              <h5>Available List</h5>
                             <table class="table table-hover table-bordered" id="table">
                                 <thead style="background-color: #3a2a67; color: white;">
                                   <tr>
                                     <th scope="col">No</th>
-                                    <th scope="col">Kategori</th>
-                                    <th scope="col">Sub - Kategori</th>
-                                    <th scope="col">Icon</th>
+                                    <th scope="col">Title</th>
+                                    <th scope="col">Category</th>
                                     <th scope="col" class="text-center">Action</th>
                                   </tr>
                                 </thead>
                                 <tbody>
                                   <tr>
                                     <th scope="row">1</th>
-                                    <td>Formal</td>
-                                    <td>
-                                      <p class="btn bg-purple text-white">Paud</p>
-                                      <p class="btn bg-purple text-white">TK</p>
-                                      <p class="btn bg-purple text-white">SD</p>
-                                      <p class="btn bg-purple text-white">SMP</p>
-                                      <p class="btn bg-purple text-white">SMA</p>
-                                      <p class="btn bg-purple text-white">Universitas</p>
-                                    </td>
-                                    <td class="text-center"><img src="<?= base_url('assets/'); ?>img/formal.png" width="75px" alt="" style="filter : invert(1)"></td>
+                                    <td>Data pengunjung selama 1 bulan terakhir</td>
+                                    <td>Monthly</td>
                                     <td class="text-center">
-                                        <a href="" class="fas fa-fw fa-edit"></a>
-                                        <a href="" class="fas fa-fw fa-trash"></a>
+                                        <a href="#" class="fas fa-fw fa-download"></a>
                                     </td>
                                   </tr>
                                   <tr>
                                     <th scope="row">2</th>
-                                    <td>Non-Formal</td>
-                                    <td>
-                                      <p class="btn bg-purple text-white">Art</p>
-                                      <p class="btn bg-purple text-white">Beladiri</p>
-                                      <p class="btn bg-purple text-white">Music</p>
-                                    </td>
-                                    <td class="text-center"><img src="<?= base_url('assets/'); ?>img/non formal.png" width="75px" alt="" style="filter : invert(1)"></td>
+                                    <td>Data semua user</td>
+                                    <td>All</td>
                                     <td class="text-center">
-                                        <a href="" class="fas fa-fw fa-edit"></a>
-                                        <a href="" class="fas fa-fw fa-trash"></a>
+                                        <a href="#" class="fas fa-fw fa-download"></a>
                                     </td>
                                   </tr>
                                   <tr>
                                     <th scope="row">3</th>
-                                    <td>Others</td>
-                                    <td>
-                                      <p class="btn bg-purple text-white">Makanan</p>
-                                      <p class="btn bg-purple text-white">Minuman</p>
-                                      <p class="btn bg-purple text-white">vendor</p>
-                                    </td>
-                                    <td class="text-center"><img src="<?= base_url('assets/'); ?>img/fashion icon.png" width="75px" alt="" style="filter : invert(1)"></td>
+                                    <td>Data semua vendor</td>
+                                    <td>All</td>
                                     <td class="text-center">
-                                        <a href="" class="fas fa-fw fa-edit"></a>
-                                        <a href="" class="fas fa-fw fa-trash"></a>
+                                        <a href="#" class="fas fa-fw fa-download"></a>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">4</th>
+                                    <td>Data semua tenant</td>
+                                    <td>All</td>
+                                    <td class="text-center">
+                                        <a href="#" class="fas fa-fw fa-download"></a>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">5</th>
+                                    <td>Data semua admin</td>
+                                    <td>All</td>
+                                    <td class="text-center">
+                                        <a href="#" class="fas fa-fw fa-download"></a>
                                     </td>
                                   </tr>
                                 </tbody>

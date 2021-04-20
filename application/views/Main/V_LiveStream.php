@@ -8,35 +8,18 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="stylesheet" href="<?= base_url('assets/')?>css/style.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="shortcut icon" href="<?= base_url('assets/img/icon.png')?>">
 </head>
 <body>
 
-    <section id="nav">
-        <nav class="navbar navbar-expand navbar-dark">
-            <div class="container-xl">
-                <a class="navbar-brand d-none d-sm-block" href="<?= base_url('Dashboard')?>">Halmahera Music School</a>
-                <a class="navbar-brand d-block d-sm-none" href="<?= base_url('Dashboard')?>">HMS</a>
-                  <ul class="navbar-nav ml-auto d-flex align-items-center">
-                    <li class="nav-item dropdown">
-                        <a  href="#" class="dropdown-toggle px-3 text-white pt-1" id="userMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Username</a>
-                        <div class="dropdown-menu" aria-labelledby="userMenu">
-                            <a  href="<?= base_url('PostMessage')?>" class="btn dropdown-item" >Post Message</a>
-                            <a href="<?= base_url('EditProfile')?>" class="btn dropdown-item">Edit profil</a>
-                            <div class="dropdown-divider"></div>
-                            <button class="dropdown-item" type="button"><a href="<?= base_url('Logout')?>" class="text-decoration-none text-dark">Logout</a></button>
-                        </div>
-                    </li>
-                  </ul>
-            </div>
-        </nav>
-    </section>
+    <?php $this->load->view('_partials/navbar.php'); ?>
 
     <section id="video1">
         <div class="container-xl my-5 py-5">
             <div class="row my-5 px-3"><div class="h1 font-weight-bold">FEX Livestream</div></div>
             <div class="row py-5 d-flex justify-content-center">
                 <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/PV0n5bSNRC4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe src="<?= $link[0]['link']?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </div>
         </div>

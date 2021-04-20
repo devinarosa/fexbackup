@@ -95,7 +95,7 @@ section#fasilitas img{ height: 600px; width: 100%; object-fit: cover;}
 section#gambar-sekolah img{ height: 500px; width: 100%; object-fit: cover; border-radius: 20px;}
 
 /* mainCarousel */
-section#mainCarousel img{ height: 400px; width: 100%; object-fit: cover; border-radius: 20px;}
+section#karouselUtama img{ height: 400px; width: 100%; object-fit: cover; border-radius: 20px;}
 
 
 /* remove ol default padding */
@@ -130,8 +130,12 @@ font-size: 1.2rem;
 width: 100%;
 } */
 
+.sidebar-konten{
+  max-width: 70vw;
+}
+
 #page-content-wrapper {
-min-width: 100vw;
+min-width:100vw;
 }
 
 #wrapper.toggled #sidebar-wrapper {
@@ -168,6 +172,27 @@ margin-left: 15rem;
   margin-left: -15rem;
 }
 
+/* Register telephone */
+.iti{
+  width:100%;
+}
+
+.iti__flag-container{
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+section#hero input#telepon {
+  width:100%;
+  max-width: 400px;
+  margin:auto;
+}
+
+.w-400{
+  width:100%;
+  max-width: 400px;
+}
+
 }
 
 
@@ -198,7 +223,7 @@ section#items {
 .boothSmallName{
 
   position: absolute;
-  top: 0%;
+  top: 6.5%;
   left: 28%;
   width: 73%;
   white-space: nowrap;
@@ -222,38 +247,14 @@ section#items {
 }
 
 ::-webkit-scrollbar-thumb{
-	background-color: #CBCBCB;
-	border-radius: 10px;
+  background-color: #CBCBCB;
+  border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover{
-	background-color: #909090;
+  background-color: #909090;
 }
 
-@media only screen and (max-width: 575px){
-
-  ::-webkit-scrollbar{
-    display: none;
-  }
-  .schoolCarouselIcon{
-    width: 250px;
-  }
-    /* gambarSekolah */
-  section#gambar-sekolah img{border-radius: 0px;}
-
-  /* mainCarousel */
-  section#mainCarousel img{border-radius: 0px;}
-
-  .title{
-    font-size: 1.5rem;
-  }
-  .more{
-    font-size: 1.25rem;
-  }
-  .horizontalScroll {
-    overflow-x: scroll;
-  }
-}
 
 /* @media only screen and (min-width: 575px){
   .booth-name{
@@ -336,6 +337,7 @@ section#items {
 .schoolFullModal .modal-content{
   background-color: rgba(0, 0, 0, 0);
   position: relative;
+  border:none;
 }
 
 .booth-img{height: 100%; width: 100%; object-fit: cover;}
@@ -352,4 +354,448 @@ section#items {
 
 .selectCategory {
   cursor: pointer;
+}
+
+
+
+
+/* 
+
+Mainpage 
+
+*/
+.aktif {
+  background-color: #000;
+  color: white;
+  padding:4px 0;
+}
+
+.pilihanKategori a:hover {
+  color: black;
+}
+
+
+
+
+/* 
+
+Dashboard 
+
+*/
+.schoolFullModal .modal-dialog {
+  max-width: 80vw;
+}
+.modal-content{
+  position:relative;
+}
+.schoolFullModal .logo{
+  position: absolute;
+  top: 4.2%;
+  left: 25%;
+  width: 15%;
+  height: 21.2%;
+}
+.schoolFullModal .contactUs{
+  position: absolute;
+  top: -1.8%;
+  left: 1%;
+  width: 18%;
+  height: 46.2%;
+  cursor: pointer;
+}
+.schoolFullModal .booth-contactUs{
+  width:132%;
+}
+.schoolFullModal .booth-name{
+  position: absolute;
+  top: 4.2%;
+  left: 41%;
+  width: 51%;
+  height: 21.2%;
+  font-size: 2vw;
+}
+.schoolFullModal .gallery {
+  position: absolute;
+  top: 39.7%;
+  left: 44.92%;
+  width: 20.53%;
+  height: 19%;
+  transform: rotate3d(1,0,0,5deg);
+}
+
+.schoolFullModal .profile {
+  position: absolute;
+  top: 56.6%;
+  left: 20.9%;
+  width: 9%;
+  height: 23%;
+  cursor: pointer;
+}
+.schoolFullModal .booth-logo{
+  height: 100%;
+  width: auto;
+}
+
+.schoolFullModal .aktif {
+  background-color: #000;
+  color: white;
+}
+
+
+
+
+/* 
+
+explore 
+
+*/
+.trendingVendor{
+  overflow: hidden;
+  position: relative;
+}
+hr{
+  border: 1px solid rgb(0, 0, 0);
+}
+.badge{
+  background-color: rgb(212, 212, 212);
+  color: black;
+}
+.schoolTrending .row{
+  border-bottom: 1px solid rgb(228, 228, 228);
+}
+.schoolCarouselImg{
+  filter: brightness(0.7);
+  transition: all 0.3s ease-in-out;
+}
+.schoolCarouselImg:hover{
+  filter: brightness(1);
+  transform: scale(1.2);
+}
+
+.trendingVendorImage{
+  width: 100%;
+  height: 200px;
+  height: auto;
+  transition: all 0.3s ease-in-out;
+  filter: brightness(.7);
+}
+
+.trendingVendor:hover .trendingVendorImage {
+  filter: brightness(1);
+  transform: scale(1.2);
+}
+
+.trendingVendor:hover .trendingVendorTitle{
+  opacity: 1;
+  transition: .3s ease-in-out;
+}
+
+.trendingVendorTitle{
+  position: absolute;
+  color: white;
+  opacity: 0;
+  transition: .3s ease-in-out;
+}
+
+
+/*
+
+school profile 
+
+*/
+
+section#contactButton{
+  position: fixed;
+  right: 3%;
+  bottom: 6%;
+  height: 70px;
+  width: 70px;
+  z-index:999;
+  cursor: pointer;
+}
+.schoolProfileHidden {
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+.contactUs i{
+  transition: all 0.3s ease-in-out;
+  padding:10px;
+  border-radius:10px;
+}
+
+.trigger{
+  transition: all 0.3s ease-in-out;
+}
+
+.contactCard {
+  position: fixed;
+  right: 3%;
+  bottom: 6%;
+  border-radius: 10px;
+  width:300px;
+  z-index:888;
+  pointer-events: none;
+}
+.contactCard::before{
+  content: "";
+  position: absolute;
+  top: 100%;
+  right: 20px;
+  width: 0;
+  border-top: 20px solid white;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+}
+.contactCard .title{
+  height:auto;
+  font-size:1.3em;
+  margin-top:5px;
+  padding:15px;
+  display:flex;
+  align-items:center;
+}
+.contactCard .options{
+  background-color:white;
+  color:black;
+  padding:10px 10px 20px 10px;
+  border-radius:0 0 10px 10px;
+}
+.contactCard .options .row{
+  display:flex;
+  align-items:center;
+  padding:10px;
+  border-radius:5px;
+  position:relative;
+  background-color:#f2f2f2;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+.contactCard .options .row:hover{
+  transform: scale(1.06);
+}
+.contactCard .options .row::before{
+ content:'';
+ position:absolute;
+ left:6px;
+ top:0px;
+ background-color:white;
+ height:100%;
+ width:6px;
+}
+.contactCard .options .row p{
+  margin:0;
+  font-size:1.1rem;
+  user-select: none;
+  
+}
+.contactCard .options .row.a::before{
+  background-color: #85ff98;
+}
+.contactCard .options .row.b::before{
+  background-color: rgb(255, 126, 122);
+}
+.contactCard .options .row.c::before{
+  background-color: #73a8f8;
+}
+
+#mainCarousel{
+  margin:0 auto;
+  width: 100vw;
+}
+#carouselFasilitas{
+  margin:0 auto;
+  width: 100vw;
+}
+
+
+/* 
+
+admin side menu
+
+*/
+.menu-active {
+  font-size: 18px;
+}
+
+.menu-passive{
+  font-size: 18px; background-color: #3a2a67; color: white;
+}
+
+
+/*
+
+vendorSideMenu & tenantSideMenu
+
+*/
+
+.menu-active {
+  font-size: 18px;
+}
+
+.menu-passive{
+  font-size: 18px; background-color: #3a2a67; color: white;
+}
+
+.boothColorButton{
+  background-color: #C0BDF2;
+  cursor: pointer;
+  height: 40px;
+  position: relative;
+}
+.boothColorButton.checked{
+  border: 2px solid black;
+}
+
+.boothColorButton.checked::before{
+  content :'✔';
+}
+
+.logoPreview{
+  width: auto;
+  height: auto;
+  min-width: 200px;
+  max-width: 250px;
+  background-color: #ddd;
+}
+
+.logoPreview .preview{
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.boothPreview{
+  position: relative;
+}
+
+.boothPreview .logo{
+  position: absolute;
+  top: 9.7%;
+  left: 28.6%;
+  width: 16%;
+  height: 19.9%;
+  display: flex;
+  align-items: center;
+}
+.boothPreview .booth-name{
+  position: absolute;
+  top: 11%;
+  left: 47%;
+  width: 39%;
+  height: 19%;
+  font-size: 1.4rem;
+  line-height: 1.5rem;
+}
+.boothPreview .gallery {
+  position: absolute;
+  top: 41.4%;
+  left: 45.72%;
+  width: 17.73%;
+  height: 16.6%;
+  transform: rotate3d(1,0,0,5deg);
+}
+
+.boothPreview .booth-logo{
+  width: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: scale-down;
+}
+.boothPreview .booth-desc{
+  position: absolute;
+  top: 57.6%;
+  left: 25.1%;
+  width: 7.3%;
+  height: 15.9%;
+  font-size: 0.45rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.fotoPreview{
+  height: 170px;
+  background-color: #ddd;
+  position: relative;
+}
+.fotoPreview .removeImage{
+  position: absolute;
+  right: 3%;
+  top : 4%;
+  background-color: rgb(243, 243, 243);
+  padding: 5px;
+  cursor: pointer;
+}
+.fotoPreview .preview{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hidden{
+  opacity: 0;
+  pointer-events: none;
+}
+
+.plus{
+  height: 170px;
+  color: #ddd;
+  cursor: pointer;
+
+}
+.fa-plus{
+  width: 100%;
+  height: 100%;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+
+
+@media only screen and (max-width: 575px){
+  .sidebar-konten{
+    max-width: 100vw;
+  }
+
+  ::-webkit-scrollbar{
+    display: none;
+  }
+  .schoolCarouselIcon{
+    width: 250px;
+  }
+    /* gambarSekolah */
+  section#gambar-sekolah img{border-radius: 0px;}
+
+  /* mainCarousel */
+  section#mainCarousel img{border-radius: 0px;}
+
+  .title{
+    font-size: 1.5rem;
+  }
+  .more{
+    font-size: 1.25rem;
+  }
+  .horizontalScroll {
+    overflow-x: scroll;
+  }
+  .schoolFullModal .modal-content{
+    transform:translateX(23px) ;
+  }
+
+  .contactCard {
+    position: fixed;
+    right: 4%;
+    bottom: 16%;
+    border-radius: 10px;
+    width:300px;
+    z-index:888;
+  }
+  section#contactButton{
+    position: fixed;
+    right: 4%;
+    bottom: 4%;
+    height: 70px;
+    width: 70px;
+    z-index:999;
+  
+  }
 }

@@ -6,32 +6,26 @@
     <title>Post</title>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <link rel="stylesheet" href="<?= base_url('assets')?>/css/style.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="<?= base_url('assets/img/icon.png')?>">
+
+    <script type="text/javascript">
+        var baseurl = "<?= base_url('')?>"
+    </script>
+    <script type="text/javascript" src="<?= base_url('assets')?>/js/bootstrap-multiselect.js"></script>
+    <link rel="stylesheet" href="<?= base_url('assets')?>/css/bootstrap-multiselect.css">
+    <link rel="stylesheet" href="<?= base_url('assets')?>/css/style.css">
+    
 </head>
 <body class="d-flex flex-column">
 
-    <section id="nav">
-        <nav class="navbar navbar-expand navbar-dark">
-            <div class="container-xl">
-                <a class="navbar-brand d-none d-sm-block" href="<?= base_url('Dashboard')?>">Halmahera Music School</a>
-                <a class="navbar-brand d-block d-sm-none" href="<?= base_url('Dashboard')?>">HMS</a>
-                  <ul class="navbar-nav ml-auto d-flex align-items-center">
-                    <li class="nav-item dropdown">
-                        <a  href="#" class="dropdown-toggle px-3 text-white pt-1" id="userMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Username</a>
-                        <div class="dropdown-menu" aria-labelledby="userMenu">
-                            <a  href="<?= base_url('PostMessage')?>" class="btn dropdown-item" >Post Message</a>
-                            <a href="<?= base_url('EditProfile')?>" class="btn dropdown-item">Edit profil</a>
-                            <div class="dropdown-divider"></div>
-                            <button class="dropdown-item" type="button"><a href="<?= base_url('Logout')?>" class="text-decoration-none text-dark">Logout</a></button>
-                        </div>
-                    </li>
-                  </ul>
-            </div>
-        </nav>
-    </section>
+    <?php $this->load->view('_partials/navbar.php'); ?>
 
     <section id="postMessage" class="flex-grow-1">
+    <form method="POST" action="<?= base_url('doPost')?>" enctype="multipart/form-data">
+
         <div class="container-xl my-5 px-4 px-md-5">
             <div class="row my-5">
                 <div class="col d-flex flex-column">
@@ -39,6 +33,9 @@
                     <p class="lead">We will forward your message to all of the schools and vendors in this event. And soon you’ll be contacted by one of them.</p>
                 </div>
                 <div class="col d-none d-md-block"></div>
+            </div>
+            <div  id="flash">
+                  
             </div>
             <div class="row border rounded">
                 <div class="container-xl">
@@ -48,30 +45,49 @@
                         </div>
                         <div class="col-sm-11 mt-3">
                             <div class="form-group">
-                                <textarea class="form-control border-0 post-text-area" id="exampleFormControlTextarea1" rows="3" placeholder="Apa yang anda cari ..."></textarea>
+                                <textarea name="txaPost" class="form-control border-0 post-text-area" id="exampleFormControlTextarea1" rows="3" placeholder="Make your wish comes true! ..."></textarea>
+                                <input type="hidden" class="khususEditFlag" name="txtEditFlag" value="N">
+                                <input type="hidden" class="khususIDPost" name="txtIDPost">
                             </div>
                         </div>
                     </div>
                     <div class="row my-4 d-flex align-items-center">
                         <div class="col-sm-7">
                             <div class="input-group">
-                                <div class="custom-file">
-                                  <input type="file" class="custom-file-input" id="inputGroupFile02">
-                                  <label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Choose Image ... </label>
-                                </div>
-                                <div class="input-group-append ml-3">
-                                    <select class="custom-select" id="inputGroupSelect01">
-                                    <option selected>Category</option>
-                                    <option value="SD">SD</option>
-                                    <option value="SMP">SMP</option>
-                                    <option value="SMA">SMA</option>
-                                    <option value="Lainya">Lainya...</option>
-                                    </select>
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <div class="custom-file">
+                                            <input name="txfPost" type="file" class="custom-file-input" id="inputGroupFile02">
+                                            <label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Choose Image ... </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-7">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="input-group-append my-3 my-md-0">
+                                                    <select name="slcCategory" onchange="getTriggerSub(this)" class="custom-select" id="inputGroupSelect01">
+                                                        <option value=""> Category </option>
+                                                        <?php foreach ($category as $k) { ?>
+                                                            <option value="<?= $k['id'] ?>"><?= $k['name'] ?></option>
+                                                        <?php } ?>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="input-group-append subkategori">
+                                                    <select class="form-control" required name="slcSubCategory[]" >
+                                                        <option value=""> Choose Category First </option>
+                                                        
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                               </div>
                         </div>
                         <div class="col-sm-5 d-flex justify-content-end mt-4 mt-sm-0">
-                            <button type="button" class="btn mr-3 d-flex align-items-center">
+                            <button type="submit" class="btn mr-3 d-flex align-items-center">
                                 <i class="fa fa-paper-plane fa-2x mr-3"></i>
                                 <span class="post-btn">Send</span>
                                 </button>
@@ -80,14 +96,15 @@
                 </div>           
             </div>
         </div>
+    </form>
     </section>
 
     <section id="yourPost">
         <div class="container-xl my-5 px-4 px-md-5">
             <div class="row my-5 px-3"><div class="h1 font-weight-bold">Your Post</div></div>
 
-
-            <div class="row mb-5">
+            <?php foreach ($post as $h){ ?>
+                <div class="row mb-5 post<?=$h['id_msg']?>">
                 <div class="col-sm-2 mb-4">
                     <i class="far fa-user fa-3x"></i>
                 </div>
@@ -95,162 +112,119 @@
                     <div class="container-xl px-4 py-4">
                         <div class="row">
                             <div class="col-10 mr-3">
-                            <div class="h3">Category : SD</div>
-                            <div class="small">08/09 13:45</div>
-                            <p class="mt-3 post-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa totam quo repellat atque iste ratione aliquam exercitationem recusandae consequuntur libero.</p>
+                            <div class="h3">Category : <?php foreach ($category as $g) { if ($g['id'] == $h['id_category']){echo $g['name'];}else{}} ?>
+                            </div>
+                            <div class="h5">Sub Category : <?php $arr = explode(',', $h['id_subcategory']); foreach ($subs as $j) { if (in_array($j['id'], $arr)){echo $j['name']; echo ' ';}else{}} ?>
+                            </div>
+                            <div class="small"><?= $h['creation_date']?> - <?= $h['fullname']; ?></div>
+                            <p class="mt-3 post-text"><?= $h['msg']?></p>
                             </div>
                             <div class="col-1 d-flex justify-content-end">
                                 <div class="dropleft">
                                     <i class="fas fa-ellipsis-v btn" id="edit" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
                                     <div class="dropdown-menu" aria-labelledby="edit">
-                                        <button class="dropdown-item edit-post" type="button">Edit Post</button>
-                                        <button class="dropdown-item" type="button" data-toggle="modal" data-target="#exampleModalCenter">Delete Post</button>
+                                        <button id-post="<?= $h['id_msg']?>" class="dropdown-item edit-post" type="button">Edit Post</button>
+                                        <button class="dropdown-item" type="button" data-toggle="modal" data-target="#exampleModalCenter<?=$h['id_msg']?>">Delete Post</button>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                                <div class="modal-dialog modal-dialog-centered" role="document">
-                                  <div class="modal-content">
-                                    <div class="modal-header d-flex justify-content-center">
-                                      <div class="modal-title text-center f-15 bold" id="exampleModalLongTitle">Hapus Post?</div>
-                                    </div>
-                                    <div class="modal-footer p-0 d-flex justify-content-around">
-                                      <button type="button" class="btn" data-dismiss="modal">Kembali</button>
-                                      <button type="button" class="btn" data-dismiss="modal">Ya</button>
-                                    </div>
-                                  </div>
                                 </div>
                             </div>
                         </div>
                         <div class="row my-3">
-                            <div class="col"><img src="<?= base_url('assets'); ?>/img/HMS LOGO.jpeg" alt="" class="img-fluid"></div>
-                            <div class="col"><img src="<?= base_url('assets'); ?>/img/HMS LOGO.jpeg" alt="" class="img-fluid"></div>
-                            <div class="col"><img src="<?= base_url('assets'); ?>/img/HMS LOGO.jpeg" alt="" class="img-fluid"></div>
+                            <div class="col"><img src="<?= base_url('assets/upload/post/'.$h['filename']); ?>" alt="" class="img-fluid"></div>
                         </div>
-                        <div class="row"></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row mb-5">
-                <div class="col-sm-2 mb-4">
-                    <i class="far fa-user fa-3x"></i>
-                </div>
-                <div class="col-sm-10 border rounded">
-                    <div class="container-xl px-4 py-4">
                         <div class="row">
-                            <div class="col-10 mr-3">
-                            <div class="h3">Category : SD</div>
-                            <div class="small">08/09 13:45</div>
-                            <p class="mt-3 post-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa totam quo repellat atque iste ratione aliquam exercitationem recusandae consequuntur libero.</p>
-                            </div>
-                            <div class="col-1 d-flex justify-content-end">
-                                <div class="dropleft">
-                                    <i class="fas fa-ellipsis-v btn" id="edit" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
-                                    <div class="dropdown-menu" aria-labelledby="edit">
-                                        <button class="dropdown-item edit-post" type="button">Edit Post</button>
-                                        <button class="dropdown-item" type="button" data-toggle="modal" data-target="#exampleModalCenter">Delete Post</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                                <div class="modal-dialog modal-dialog-centered" role="document">
-                                  <div class="modal-content">
-                                    <div class="modal-header d-flex justify-content-center">
-                                      <div class="modal-title text-center f-15 bold" id="exampleModalLongTitle">Hapus Post?</div>
-                                    </div>
-                                    <div class="modal-footer p-0 d-flex justify-content-around">
-                                      <button type="button" class="btn" data-dismiss="modal">Kembali</button>
-                                      <button type="button" class="btn" data-dismiss="modal">Ya</button>
-                                    </div>
-                                  </div>
-                                </div>
-                            </div>
+                            <div class="col-12 mall">Email <?= $h['email']; ?> - Phone Number <?= $h['phone_number']; ?></div>
                         </div>
-                        <div class="row my-3">
-                            <div class="col"><img src="" alt="" class="img-fluid"></div>
-                        </div>
-                        <div class="row"></div>
                     </div>
                 </div>
-            </div>
-
-
-            <div class="row mb-5">
-                <div class="col-sm-2 mb-4">
-                    <i class="far fa-user fa-3x"></i>
                 </div>
-                <div class="col-sm-10 border rounded">
-                    <div class="container-xl px-4 py-4">
-                        <div class="row">
-                            <div class="col-10 mr-3">
-                            <div class="h3">Category : SD</div>
-                            <div class="small">08/09 13:45</div>
-                            <p class="mt-3 post-text">Culpa totam quo repellat atque iste ratione aliquam exercitationem recusandae consequuntur libero.</p>
+
+                <div class="modal fade" id="exampleModalCenter<?=$h['id_msg']?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header d-flex justify-content-center">
+                                <div class="modal-title text-center f-15 bold" id="exampleModalLongTitle">Hapus Post?</div>
                             </div>
-                            <div class="col-1 d-flex justify-content-end">
-                                <div class="dropleft">
-                                    <i class="fas fa-ellipsis-v btn" id="edit" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
-                                    <div class="dropdown-menu" aria-labelledby="edit">
-                                        <button class="dropdown-item edit-post" type="button">Edit Post</button>
-                                        <button class="dropdown-item" type="button" data-toggle="modal" data-target="#exampleModalCenter">Delete Post</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                                <div class="modal-dialog modal-dialog-centered" role="document">
-                                  <div class="modal-content">
-                                    <div class="modal-header d-flex justify-content-center">
-                                      <div class="modal-title text-center f-15 bold" id="exampleModalLongTitle">Hapus Post?</div>
-                                    </div>
-                                    <div class="modal-footer p-0 d-flex justify-content-around">
-                                      <button type="button" class="btn" data-dismiss="modal">Kembali</button>
-                                      <button type="button" class="btn" data-dismiss="modal">Ya</button>
-                                    </div>
-                                  </div>
-                                </div>
+                            <div class="modal-footer p-0 d-flex justify-content-around">
+                                <button type="button" class="btn" data-dismiss="modal">Kembali</button>
+                                <button type="button" class="btn" onclick="deletePost(<?=$h['id_msg']?>)">Ya</button>
                             </div>
                         </div>
-                        <div class="row my-3">
-                            <div class="col"><img src="<?= base_url('assets'); ?>/img/HMS LOGO.jpeg" alt="" class="img-fluid"></div>
-                            <div class="col"><img src="<?= base_url('assets'); ?>/img/HMS LOGO.jpeg" alt="" class="img-fluid"></div>
-                        </div>
-                        <div class="row"></div>
                     </div>
                 </div>
-            </div>
-
-
+            <?php } ?>
         
     </section>
 
+    <?php $this->load->view('_partials/footer.php') ?>
 
-    <section id="footer">
-        <div class="container-xl py-5 px-4">
-            <div class="row">
-                <div class="col-lg-6 margin">
-                    <div class="h4">About Us</div>
-                    <div class="h6">Halmahera Music School</div>
-                    <div >A Music School located in Semarang City with Yamaha International Curriculum</div>
-                    <div class="social-media margin">
-                        <a href="https://hmssemarang.com" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
-                        <a href="https://hmssemarang.com" target="_blank"><i class="fab fa-twitter fa-2x"></i></a>
-                        <a href="https://hmssemarang.com" target="_blank"><i class="fab fa-facebook-square fa-2x"></i></a>
-                        <a href="https://hmssemarang.com" target="_blank"><i class="fab fa-youtube fa-2x"></i></a>
-                        <a href="https://hmssemarang.com" target="_blank"><i class="fab fa-firefox fa-2x"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-6 mt-5">
-                    <div class="back mb-5 lead"><a href="#nav">Back to Top <i class="fas fa-arrow-to-top pl-2"></i></a></div>
-                    <p>© 2020 Halmahera Music School Semarang. All Rights Reserved.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- jQuery and JS bundle w/ Popper.js -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
     <script src="<?= base_url('assets')?>/js/postMessage.js"></script>
+
+    <script type="text/javascript">
+
+        $(document).ready(function() {
+        $('#flash').hide();
+        <?php if($this->session->flashdata('msg')){ ?>
+        $('#flash').html(`
+                <div class="alert alert-success alert-dismissible fade show mt-3" role="alert">
+                <strong>Success!</strong> <?php echo $this->session->flashdata('msg'); ?>.
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>`).show();
+        <?php } else if($this->session->flashdata('del')){ ?>
+        $('#flash').html(`
+                <div class="alert alert-danger alert-dismissible fade show mt-3" role="alert">
+                <strong>Success!</strong> <?php echo $this->session->flashdata('del'); ?>.
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>`).show();
+        <?php } ?>
+        });
+
+        function deletePost(th) {
+            var id_msg = th
+            $.ajax({
+              type: "POST",
+              url: baseurl+"ajax/softDeletePost",
+              data:{
+                id_msg:id_msg
+              },
+              success: function(response) {
+                $('#exampleModalCenter'+th).modal('hide')
+                $('.post'+th).remove();
+                window.location.reload();
+              }
+          })
+        }
+
+        function getTriggerSub(th) {
+            var category = $(th).val();
+
+            $.ajax({
+              type: "POST",
+              dataType: "json",
+              url: baseurl+"ajax/getTriggerSub",
+              data:{
+                category:category
+              },
+              success: function(response) {
+                
+                let dataItem = ''
+                $.each(response, function (i, item) {
+                    dataItem += `<option value="${item.id}">${item.name}</option>`
+                })
+
+                $('.subkategori').html(`
+                                <select class="form-control" multiple="multiple" required name="slcSubs[]" id="demo">
+                                    <option value=""> Choose Category First </option>
+                                    ${dataItem}
+                                </select>`);
+                // $('#demo').multiselect();
+              }
+            })
+        }
+    </script>
 </body>
 </html>

@@ -25,97 +25,58 @@
         <section id="notifications" class="flex-grow-1">
             <div class="container-xl my-5">
                 <div class="row"><div class="h1 font-weight-bold px-4">Notifications</div></div>
-    
-    
-                <div class="row mt-5">
-                    <div class="container-xl rounded bg-light p-4">
-                        <div class="row">
-                            <div class="col-sm-2 d-flex flex-column align-items-center">
-                                <i class="far fa-user fa-3x mb-2"></i>
-                                <p>Username</p>
-                            </div>
-                            <div class="col-sm-10">
-                                <div class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo incidunt non aliquid fugiat eius nam at odit, quis, saepe ex qui distinctio eaque iusto hic, quidem ut maiores explicabo illum.</div>
-                            </div>
-                        </div>
-                        <div class="row px-lg-4 mt-3">
-                            <div class="col-sm-6">
-                                <div class="p">user@mail.com | +62 8904 3904 323</div>
-                            </div>
-                            <div class="col-sm-6 d-sm-flex justify-content-end mt-3 mt-sm-0">
-                                <p>12:37 7/12/2020</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-    
-    
-                <div class="row mt-5">
-                    <div class="container-xl rounded bg-light p-4">
-                        <div class="row">
-                            <div class="col-sm-2 d-flex flex-column align-items-center">
-                                <i class="far fa-user fa-3x mb-2"></i>
-                                <p>Username</p>
-                            </div>
-                            <div class="col-sm-10">
-                                <div class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo incidunt non aliquid fugiat eius nam at odit, quis, saepe ex qui distinctio eaque iusto hic, quidem ut maiores explicabo illum.</div>
-                            </div>
-                        </div>
-                        <div class="row px-lg-4 mt-3">
-                            <div class="col-sm-6">
-                                <div class="p">user@mail.com | +62 8904 3904 323</div>
-                            </div>
-                            <div class="col-sm-6 d-sm-flex justify-content-end mt-3 mt-sm-0">
-                                <p>12:37 7/12/2020</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-    
                 
-                <div class="row mt-5">
-                    <div class="container-xl rounded bg-light p-4">
-                        <div class="row">
-                            <div class="col-sm-2 d-flex flex-column align-items-center">
-                                <i class="far fa-user fa-3x mb-2"></i>
-                                <p>Username</p>
+               <?php if (!empty($post)) { ?>  
+                    <?php foreach($post as $k){ ?>
+        
+                    <div class="row mt-5">
+                        <div class="container-xl rounded bg-light p-4">
+                            <div class="row">
+                                <div class="col-sm-2 d-flex flex-column align-items-center">
+                                    <i class="far fa-user fa-3x mb-2"></i>
+                                    <p><?= $k['username']?></p>
+                                </div>
+                                <div class="col-sm-10">
+                                    <div class="lead"><?= $k['msg']?></div>
+                                    <div class="lead"><img src="<?= base_url('assets/upload/post/'.$k['filename'])?>"></div>
+                                </div>
                             </div>
-                            <div class="col-sm-10">
-                                <div class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo incidunt non aliquid fugiat eius nam at odit, quis, saepe ex qui distinctio eaque iusto hic, quidem ut maiores explicabo illum.</div>
-                            </div>
-                        </div>
-                        <div class="row px-lg-4 mt-3">
-                            <div class="col-sm-6">
-                                <div class="p">user@mail.com | +62 8904 3904 323</div>
-                            </div>
-                            <div class="col-sm-6 d-sm-flex justify-content-end mt-3 mt-sm-0">
-                                <p>12:37 7/12/2020</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-    
-                <div class="row mt-5">
-                    <div class="container-xl rounded bg-light p-4">
-                        <div class="row">
-                            <div class="col-sm-2 d-flex flex-column align-items-center">
-                                <i class="far fa-user fa-3x mb-2"></i>
-                                <p>Username</p>
-                            </div>
-                            <div class="col-sm-10">
-                                <div class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo incidunt non aliquid fugiat eius nam at odit, quis, saepe ex qui distinctio eaque iusto hic, quidem ut maiores explicabo illum.</div>
-                            </div>
-                        </div>
-                        <div class="row px-lg-4 mt-3">
-                            <div class="col-sm-6">
-                                <div class="p">user@mail.com | +62 8904 3904 323</div>
-                            </div>
-                            <div class="col-sm-6 d-sm-flex justify-content-end mt-3 mt-sm-0">
-                                <p>12:37 7/12/2020</p>
+                            <div class="row px-lg-4 mt-3">
+                                <div class="col-sm-6">
+                                    <div class="p"><a href="mailto:<?= $k['email']?>"><?= $k['email']?></a> | <a href="https://wa.me/<?= $k['phone_number']?>"><?= $k['phone_number']?></a> </div>
+                                </div>
+                                <div class="col-sm-6 d-sm-flex justify-content-end mt-3 mt-sm-0">
+                                    <p><?= $k['creation_date']?></p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+
+                    <?php } ?>
+
+                <?php }else{ ?>
+                    <div class="row mt-5">
+                        <div class="container-xl rounded bg-light p-4">
+                            <div class="row">
+                                <div class="col-sm-2 d-flex flex-column align-items-center">
+                                    <i class="far fa-user fa-3x mb-2"></i>
+                                    <p>Username</p>
+                                </div>
+                                <div class="col-sm-10">
+                                    <div class="lead">You had no notification yet...</div>
+                                </div>
+                            </div>
+                            <div class="row px-lg-4 mt-3">
+                                <div class="col-sm-6">
+                                    <div class="p">Email | Phone Number</div>
+                                </div>
+                                <div class="col-sm-6 d-sm-flex justify-content-end mt-3 mt-sm-0">
+                                    <p><?= date('Y-m-d H:i:s')?></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <?php }?>
 
 
                 <div class="row py-5">
@@ -125,7 +86,8 @@
                           <thead style="background-color: #3a2a67; color: white;">
                             <tr>
                               <th scope="col">No</th>
-                              <th scope="col">Nama</th>
+                              <th scope="col">Fullname</th>
+                              <th scope="col">Username</th>
                               <th scope="col">Email</th>
                               <th scope="col">Telepon</th>
                               <th scope="col">Tanggal Lahir</th>
@@ -133,6 +95,16 @@
                             </tr>
                           </thead>
                           <tbody>
+                            <?php $no=1; foreach($post as $k) {?>
+                                <tr>
+                                    <td> <?=$no;?> </td>
+                                    <td> <?=$k['fullname']?> </td>
+                                    <td> <?=$k['username']?> </td>
+                                    <td> <?=$k['email']?> </td>
+                                    <td> <?=$k['phone_number']?> </td>
+                                    <td> <?=$k['date_birth']?></td>
+                                    <td> <?=$k['address']?></td>
+                            <?php } ?>
                             
                           </tbody>
                         </table>

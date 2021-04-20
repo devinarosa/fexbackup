@@ -60,3 +60,4 @@ $route['index'] = 'C_View/index';
 $route['ajax/(:any)'] = 'C_View/$1';
 $route['(:any)'] = 'C_View/$1';
 $route['(:any)/(:any)'] = 'C_View/$1/$2'; 
+$route['(:any)/(:any)/(:any)'] = 'C_View/$1/$2/$3'; 

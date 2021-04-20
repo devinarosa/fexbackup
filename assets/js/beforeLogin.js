@@ -65,3 +65,103 @@ arrowLeft.forEach(i => {
         }
 }
 });
+
+//dragable
+var scroll = document.querySelectorAll('.horizontalScroll');
+var initPosition = 0;
+var finalPosition = 0;
+var dragging = false;
+var sensitivity = 1.7;
+
+window.onload = () => {
+    if(window.innerWidth < 575){
+        scroll.forEach(i => {
+            i.onmousedown = e => {
+            }
+            i.onmousemove = e => {
+            }
+            i.onmouseup = e => { 
+            }
+        })
+    }
+    else{
+        scroll.forEach(i => {
+            i.onmousedown = e => {
+                initPosition = e.clientX;
+                e.target.style.cursor = 'grabbing';
+                dragging = true;
+            }
+            i.onmousemove = e => {
+                currentPosition = e.clientX;
+                dx = currentPosition - initPosition;
+                if(dx > 4){
+                    i.querySelectorAll('.item').forEach(image => {
+                        image.style.pointerEvents = 'none';
+                        image.style.userSelect = 'none';
+                    })
+                }
+                if(dragging){
+                    finalPosition = e.clientX;
+                    e.target.scrollLeft -= (finalPosition - initPosition) * sensitivity;
+                }    
+            }
+            i.onmouseup = e => { 
+                initPosition = 0;
+                finalPosition = 0;
+                dragging = false;
+                e.target.style.cursor = 'grab';
+                i.querySelectorAll('.item').forEach(image => {
+                    image.style.pointerEvents = 'auto';
+                    image.style.userSelect = 'auto';
+                })
+            }
+        })
+    }
+}
+
+document.querySelector('body').onresize = () => {
+
+    if(window.innerWidth < 575){
+        scroll.forEach(i => {
+            i.onmousedown = e => {
+            }
+            i.onmousemove = e => {
+            }
+            i.onmouseup = e => { 
+            }
+        })
+    }
+    else{
+        scroll.forEach(i => {
+            i.onmousedown = e => {
+                initPosition = e.clientX;
+                e.target.style.cursor = 'grabbing';
+                dragging = true;
+            }
+            i.onmousemove = e => {
+                currentPosition = e.clientX;
+                dx = currentPosition - initPosition;
+                if(dx > 4){
+                    i.querySelectorAll('.item').forEach(image => {
+                        image.style.pointerEvents = 'none';
+                        image.style.userSelect = 'none';
+                    })
+                }
+                if(dragging){
+                    finalPosition = e.clientX;
+                    e.target.scrollLeft -= (finalPosition - initPosition) * sensitivity;
+                }    
+            }
+            i.onmouseup = e => { 
+                initPosition = 0;
+                finalPosition = 0;
+                dragging = false;
+                e.target.style.cursor = 'grab';
+                i.querySelectorAll('.item').forEach(image => {
+                    image.style.pointerEvents = 'auto';
+                    image.style.userSelect = 'auto';
+                })
+            }
+        })
+    }
+}

@@ -29,47 +29,48 @@ boothColorChoices.forEach(e => {
 previewBooth.style.filter = document.querySelector('.checked').style.filter;
 
 //image handling
-const inputFoto = document.querySelectorAll('.foto .inputImg');
-const inputFasilitas = document.querySelectorAll('.fasilitas .inputImg');
-const boothFoto = document.querySelector('.gallery img')
-var newImage;
+function preview(){
+    const inputFoto = document.querySelectorAll('.foto .inputImg');
+    const inputFasilitas = document.querySelectorAll('.fasilitas .inputImg');
+    const boothFoto = document.querySelector('.gallery img')
+    var newImage;
 
-inputFasilitas.forEach(i => {
-i.onchange = e => {
-    let previewTarget = e.target.parentElement.parentElement.querySelector('.preview');
-    newImage = URL.createObjectURL(e.target.files[0]);
-    previewTarget.src = newImage;
-    previewTarget.onload = () => {
-        URL.revokeObjectURL(newImage);
+    inputFasilitas.forEach(i => {
+    i.onchange = e => {
+        let previewTarget = e.target.parentElement.parentElement.querySelector('.preview');
+        newImage = URL.createObjectURL(e.target.files[0]);
+        previewTarget.src = newImage;
+        previewTarget.onload = () => {
+            URL.revokeObjectURL(newImage);
+        }
     }
+    });
+
+    inputFoto.forEach(i => {
+    i.onchange = e => {
+        let previewTarget = e.target.parentElement.parentElement.querySelector('.preview');
+        newImage = URL.createObjectURL(e.target.files[0]);
+        previewTarget.src = newImage;
+        boothFoto.src = newImage;
+        boothFoto.onload = () => {
+            URL.revokeObjectURL(newImage);
+        }
+    }
+    });
+
+
+    const removeFoto = document.querySelectorAll('.foto .removeImage');
+    removeFoto.forEach(i => {
+
+        i.onclick = e => {
+            let previewTarget = e.target.parentElement.querySelector('.preview');
+            let inputTarget = e.target.parentElement.parentElement.querySelector('.inputImg');
+            
+            previewTarget.src = './img/tambahGambar.png';
+            inputTarget.value = '';
+        }
+    })
 }
-});
-
-inputFoto.forEach(i => {
-i.onchange = e => {
-    let previewTarget = e.target.parentElement.parentElement.querySelector('.preview');
-    newImage = URL.createObjectURL(e.target.files[0]);
-    previewTarget.src = newImage;
-    boothFoto.src = newImage;
-    boothFoto.onload = () => {
-        URL.revokeObjectURL(newImage);
-    }
-}
-});
-
-
-const removeFoto = document.querySelectorAll('.foto .removeImage');
-removeFoto.forEach(i => {
-
-    i.onclick = e => {
-        let previewTarget = e.target.parentElement.querySelector('.preview');
-        let inputTarget = e.target.parentElement.parentElement.querySelector('.inputImg');
-        
-        previewTarget.src = './img/tambahGambar.png';
-        inputTarget.value = '';
-    }
-})
-
 
 //boothPreview
 
@@ -122,7 +123,7 @@ plus.onclick = e => {
     i.onclick = a => {a.target.parentElement.parentElement.remove()};
 
     let img = document.createElement('img');
-    img.src = 'assets/img/tambahGambar.png';
+    img.src = `${window.location.href.split('/').splice(0,4).join('/')}/assets/img/tambahGambar.png`;
     img.className = 'preview';
 
     fotoPreview.appendChild(i);
@@ -137,6 +138,9 @@ plus.onclick = e => {
     input.type = 'file';
     input.className = 'custom-file-input inputImg';
     input.id = 'customFile';
+    // input.name = 'txfFasilitas[]';
+    input.multiple = 'multiple';
+    input.setAttribute('name', 'txfFasilitas[]');
     input.accept = 'image/*';
 
     let label = document.createElement('label');
@@ -152,9 +156,14 @@ plus.onclick = e => {
     input.type = 'text';
     input.className = 'form-control pl-3 mt-3';
     input.id = 'nama_fasilitas';
+    input.setAttribute('name', 'txtKeteranganFasilitas[]');
+    // input.name = 'txtKeteranganFasilitas[]';
     input.placeholder = 'Nama Fasilitas';
     input.style.borderRadius = '20px';
 
     tmp.appendChild(input);
     target.insertBefore(tmp, ref);
+    preview();
 }
+
+preview();

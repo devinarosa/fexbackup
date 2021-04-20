@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="<?= base_url('assets/')?>css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="shortcut icon" href="<?= base_url('assets/img/icon.png')?>">
 
     <title>Explore</title>
     <style>
@@ -65,25 +66,7 @@
   </head>
   <body>
 
-    <section id="nav">
-        <nav class="navbar navbar-expand navbar-dark">
-            <div class="container-xl">
-                <a class="navbar-brand d-none d-sm-block" href="<?= base_url('Dashboard')?>">Halmahera Music School</a>
-                <a class="navbar-brand d-block d-sm-none" href="<?= base_url('Dashboard')?>">HMS</a>
-                  <ul class="navbar-nav ml-auto d-flex align-items-center">
-                    <li class="nav-item dropdown">
-                        <a  href="#" class="dropdown-toggle px-3 text-white pt-1" id="userMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Username</a>
-                        <div class="dropdown-menu" aria-labelledby="userMenu">
-                            <a  href="<?= base_url('PostMessage')?>" class="btn dropdown-item" >Post Message</a>
-                            <a href="<?= base_url('EditProfile')?>" class="btn dropdown-item">Edit profil</a>
-                            <div class="dropdown-divider"></div>
-                            <button class="dropdown-item" type="button"><a href="<?= base_url('Logout')?>" class="text-decoration-none text-dark">Logout</a></button>
-                        </div>
-                    </li>
-                  </ul>
-            </div>
-        </nav>
-    </section>
+    <?php $this->load->view('_partials/navbar.php'); ?>
     
     <section id="gambar-sekolah">
         <div class="container-xl">
@@ -93,58 +76,79 @@
                       <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                       <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                       <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                      <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
                     </ol>
                     <div class="carousel-inner">
-                      <div class="carousel-item active">
-                        <img class="d-block w-100 schoolCarouselImg" src="<?= base_url('assets/')?>img/HMS LOGO.jpeg" alt="First slide">
-                        <div class="carousel-caption d-none d-md-block my-3">
-                            <h1 class="schoolCarouselName font-weight-bold">Nama</h1>
-                            <p class="schoolCarouselTagline h4">Opportunities For Lifelong Learning</p>
-                            <p class="schoolCarouselAddress">Jl. Alamat Alamat no.x kelurahan, kecamatan, kota</p>
-                            <div class="schoolCarouselBadge">
-                                <div class="badge">Formal</div>
-                                <div class="badge">SMA</div>
-                            </div>
-                        </div>
-                      </div>
-                      <div class="carousel-item">
-                        <img class="d-block w-100 schoolCarouselImg" src="<?= base_url('assets/')?>img/carousel 2.jpg" alt="Second slide">
-                        <div class="carousel-caption d-none d-md-block my-3">
-                            <h1 class="schoolCarouselName font-weight-bold">Nama</h1>
-                            <p class="schoolCarouselTagline h4">Opportunities For Lifelong Learning</p>
-                            <p class="schoolCarouselAddress">Jl. Alamat Alamat no.x kelurahan, kecamatan, kota</p>
-                            <div class="schoolCarouselBadge">
-                                <div class="badge">Formal</div>
-                                <div class="badge">SMA</div>
-                            </div>
-                        </div>
-                      </div>
-                      <div class="carousel-item">
-                        <img class="d-block w-100 schoolCarouselImg" src="<?= base_url('assets/')?>img/carousel 3.jpg" alt="Third slide">
-                        <div class="carousel-caption d-none d-md-block my-3">
-                            <h1 class="schoolCarouselName font-weight-bold">Nama</h1>
-                            <p class="schoolCarouselTagline h4">Opportunities For Lifelong Learning</p>
-                            <p class="schoolCarouselAddress">Jl. Alamat Alamat no.x kelurahan, kecamatan, kota</p>
-                            <div class="schoolCarouselBadge">
-                                <div class="badge">Formal</div>
-                                <div class="badge">SMA</div>
-                            </div>
-                        </div>
-                      </div>
-                      <div class="carousel-item">
-                        <img class="d-block w-100 schoolCarouselImg" src="<?= base_url('assets/')?>img/carousel 4.jpg" alt="Third slide">
-                        <div class="carousel-caption d-none d-md-block my-3">
-                            <h1 class="schoolCarouselName font-weight-bold">Nama</h1>
-                            <p class="schoolCarouselTagline h4">Opportunities For Lifelong Learning</p>
-                            <p class="schoolCarouselAddress">Jl. Alamat Alamat no.x kelurahan, kecamatan, kota</p>
-                            <div class="schoolCarouselBadge">
-                                <div class="badge">Formal</div>
-                                <div class="badge">SMA</div>
-                            </div>
-                        </div>
-                      </div>
-                    </div>
+                            <?php $user_id = $info3[0]['user_id'];$p=0; if($info3[0]['vendor_acc_flag'] == 'Y'){$p=2;}else if($info3[0]['tenant_acc_flag'] == 'Y'){$p=3;}?>
+                                    <div class="carousel-item active">
+
+                                        <?php if (isset($pict3[0]['filename']) && $pict3[0]['filename'] !== ''){?>
+                                        <a href="<?= base_url('Profile/'.$p.'/'.$user_id)?>" target="_blank">
+                                            <img class="d-block w-100 schoolCarouselImg" src="<?= base_url('assets')?>/upload/foto/<?= $pict3[0]['filename']?>" alt="Third slide">
+                                        </a>
+                                        <?php }else{ ?>
+                                        <a href="<?= base_url('Profile/'.$p.'/'.$user_id)?>" target="_blank">
+                                            <img class="d-block w-100 schoolCarouselImg" src="<?= base_url('assets')?>/upload/foto/HMS LOGO.jpeg" alt="Third slide">
+                                        </a>
+                                        <?php } ?>
+
+                                        <div class="carousel-caption d-none d-md-block my-3">
+                                            <h1 class="schoolCarouselName font-weight-bold"><?= strtoupper($info3[0]['fullname']) ?></h1>
+                                            <p class="schoolCarouselTagline h4"><?= $info3[0]['fullname']?></p>
+                                            <p class="schoolCarouselAddress"><?= $info3[0]['email']?> - <?= $info3[0]['phone_number']?></p>
+                                            <div class="schoolCarouselBadge">
+                                                <div class="badge">Selected as</div>
+                                                <div class="badge">#Top3</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                            <?php $user_id = $info3[1]['user_id'];$p=0; if($info3[1]['vendor_acc_flag'] == 'Y'){$p=2;}else if($info3[1]['tenant_acc_flag'] == 'Y'){$p=3;}?>
+                                    <div class="carousel-item">
+
+                                        <?php if (isset($pict3[1]['filename']) && $pict3[1]['filename'] !== ''){?>
+                                        <a href="<?= base_url('Profile/'.$p.'/'.$user_id)?>" target="_blank">
+                                            <img class="d-block w-100 schoolCarouselImg" src="<?= base_url('assets')?>/upload/foto/<?= $pict3[1]['filename']?>" alt="Third slide">
+                                        </a>
+                                        <?php }else{ ?>
+                                        <a href="<?= base_url('Profile/'.$p.'/'.$user_id)?>" target="_blank">
+                                            <img class="d-block w-100 schoolCarouselImg" src="<?= base_url('assets')?>/upload/foto/HMS LOGO.jpeg" alt="Third slide">
+                                        </a>
+                                        <?php } ?>
+
+                                        <div class="carousel-caption d-none d-md-block my-3">
+                                            <h1 class="schoolCarouselName font-weight-bold"><?= strtoupper($info3[1]['fullname']) ?></h1>
+                                            <p class="schoolCarouselTagline h4"><?= $info3[1]['fullname']?></p>
+                                            <p class="schoolCarouselAddress"><?= $info3[1]['email']?> - <?= $info3[1]['phone_number']?></p>
+                                            <div class="schoolCarouselBadge">
+                                                <div class="badge">Selected as</div>
+                                                <div class="badge">#Top3</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                            <?php $user_id = $info3[2]['user_id'];$p=0; if($info3[2]['vendor_acc_flag'] == 'Y'){$p=2;}else if($info3[2]['tenant_acc_flag'] == 'Y'){$p=3;}?>
+                                    <div class="carousel-item">
+                                        <?php if (isset($pict3[2]['filename']) && $pict3[2]['filename'] !== ''){?>
+                                        <a href="<?= base_url('Profile/'.$p.'/'.$user_id)?>" target="_blank">
+                                            <img class="d-block w-100 schoolCarouselImg" src="<?= base_url('assets')?>/upload/foto/<?= $pict3[2]['filename']?>" alt="Third slide">
+                                        </a>
+                                        <?php }else{ ?>
+                                        <a href="<?= base_url('Profile/'.$p.'/'.$user_id)?>" target="_blank">
+                                            <img class="d-block w-100 schoolCarouselImg" src="<?= base_url('assets')?>/upload/foto/HMS LOGO.jpeg" alt="Third slide">
+                                        </a>
+                                        <?php } ?>
+
+                                        <div class="carousel-caption d-none d-md-block my-3">
+                                            <h1 class="schoolCarouselName font-weight-bold"><?= strtoupper($info3[2]['fullname']) ?></h1>
+                                            <p class="schoolCarouselTagline h4"><?= $info3[2]['fullname']?></p>
+                                            <p class="schoolCarouselAddress"><?= $info3[2]['email']?> - <?= $info3[2]['phone_number']?></p>
+                                            <div class="schoolCarouselBadge">
+                                                <div class="badge">Selected as</div>
+                                                <div class="badge">#Top3</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
                     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                       <span class="sr-only">Previous</span>
@@ -163,10 +167,10 @@
         <div class="container-fluid">
             <div class="row d-flex justify-content-center">
                 <div class="col-sm-12">
-                    <form action="" method="post">
+                    <form action="<?= base_url('Search')?>" method="GET">
                         <div class="form-group d-flex justify-content-center pr-3 pr-sm-0">
-                            <input style="width: 1000px; border-radius: 20px; padding-left: 20px;" type="text" class="form-control border-1" name="email_username" id="email_username" placeholder="Looking for something ? ">
-                            <i class="fas fa-search fa-1x" style="margin-left: -30px; margin-top: 10px;"></i>
+                            <input style="width: 1000px; border-radius: 20px; padding-left: 20px;" type="text" class="form-control border-0" name="q" id="email_username" placeholder="Looking for something ? ">
+                            <i class="fas fa-search fa-1x submitButton" style="margin-left: -30px; margin-top: 10px;"></i>
                         </div>                    
                     </form>
                 </div>
@@ -183,45 +187,28 @@
             <div class="row">
                 <div class="col-md-9">
                     <div class="schoolTrending container-fluid">
-                        <div class="row py-4">
-                            <div class="col-3 p-4"><img src="<?= base_url('assets/')?>img/sekolah 1.png" alt="" class="img-fluid"></div>
-                            <div class="col-9 d-flex flex-column justify-content-center">
-                                <div class="schoolTrendingName font-weight-bold h3">Nama</div>
-                                <div class="schoolTrendingTagline font-weight-bold h5">Preparing Children For Success In Life.
-                                </div>
-                                <div class="schoolTrendingAddress">Jl. Alamat Alamat no.x kelurahan, kecamatan, kota</div>
-                                <div class="schoolTrendingBadge mt-3">
-                                    <div class="badge">Formal</div>
-                                    <div class="badge">SMA</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row py-4">
-                            <div class="col-3 p-4"><img src="<?= base_url('assets/')?>img/sekolah 2.png" alt="" class="img-fluid"></div>
-                            <div class="col-9 d-flex flex-column justify-content-center">
-                                <div class="schoolTrendingName font-weight-bold h3">Nama</div>
-                                <div class="schoolTrendingTagline font-weight-bold h5">Preparing Children For Success In Life.
-                                </div>
-                                <div class="schoolTrendingAddress">Jl. Alamat Alamat no.x kelurahan, kecamatan, kota</div>
-                                <div class="schoolTrendingBadge mt-3">
-                                    <div class="badge">Formal</div>
-                                    <div class="badge">SMA</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row py-4">
-                            <div class="col-3 p-4"><img src="<?= base_url('assets/')?>img/sekolah 3.png" alt="" class="img-fluid"></div>
-                            <div class="col-9 d-flex flex-column justify-content-center">
-                                <div class="schoolTrendingName font-weight-bold h3">Nama</div>
-                                <div class="schoolTrendingTagline font-weight-bold h5">Preparing Children For Success In Life.
-                                </div>
-                                <div class="schoolTrendingAddress">Jl. Alamat Alamat no.x kelurahan, kecamatan, kota</div>
-                                <div class="schoolTrendingBadge mt-3">
-                                    <div class="badge">Formal</div>
-                                    <div class="badge">SMA</div>
-                                </div>
-                            </div>
-                        </div>
+                        <?php for ($i=0; $i < 10; $i++) { 
+
+                            if( isset($pict10[$i]['filename']) && $pict10[$i]['filename'] !== '' ){ ?>
+                                <?php $user_id = $info10[$i]['user_id'];$p=0; if($info10[$i]['vendor_acc_flag'] == 'Y'){$p=2;}else if($info10[$i]['tenant_acc_flag'] == 'Y'){$p=3;}?>
+                                    <a href="<?= base_url('Profile/'.$p.'/'.$user_id)?>" target="_blank">
+                                        <div class="row py-4">
+                                            <div class="col-3 p-4"><img src="<?= base_url('assets')?>/upload/foto/<?= $pict10[$i]['filename']?>" alt="" class="img-fluid"></div>
+                                            <div class="col-9 d-flex flex-column justify-content-center">
+                                                <div class="schoolTrendingName font-weight-bold h3"><?= strtoupper($info10[$i]['fullname']) ?></div>
+                                                <div class="schoolTrendingTagline font-weight-bold h5"><?= $info10[$i]['fullname'] ?>
+                                                </div>
+                                                <div class="schoolTrendingAddress"><?= $info10[$i]['email']?> - <?= $info10[$i]['phone_number']?></div>
+                                                <div class="schoolTrendingBadge mt-3">
+                                                    <div class="badge">Selected as</div>
+                                                    <div class="badge">#Top10</div>
+                                                </div>
+                                            </div>
+                                        </div>  
+                                    </a>
+                            <?php }else{} ?>
+                            
+                        <?php } ?>
                     </div>
                 </div>
                 <div class="col-md-3 p-0 my-5">
@@ -231,26 +218,21 @@
                                 Mungkin anda tertarik
                             </div>
                         </div>
-                        <div class="row mb-3 trendingVendor d-flex justify-content-center align-items-center px-3">
-                            <img src="<?= base_url('assets/')?>img/carousel 2.jpg" alt="" class="img-fluid trendingVendorImage">
-                            <div class="trendingVendorTitle h3">Vendor 1</div>
-                        </div>
-                        <div class="row mb-3 trendingVendor d-flex justify-content-center align-items-center px-3">
-                            <img src="<?= base_url('assets/')?>img/carousel 2.jpg" alt="" class="img-fluid trendingVendorImage">
-                            <div class="trendingVendorTitle h3">Vendor 1</div>
-                        </div>
-                        <div class="row mb-3 trendingVendor d-flex justify-content-center align-items-center px-3">
-                            <img src="<?= base_url('assets/')?>img/carousel 2.jpg" alt="" class="img-fluid trendingVendorImage">
-                            <div class="trendingVendorTitle h3">Vendor 1</div>
-                        </div>
-                        <div class="row mb-3 trendingVendor d-flex justify-content-center align-items-center px-3">
-                            <img src="<?= base_url('assets/')?>img/carousel 2.jpg" alt="" class="img-fluid trendingVendorImage">
-                            <div class="trendingVendorTitle h3">Vendor 1</div>
-                        </div>
-                        <div class="row mb-3 trendingVendor d-flex justify-content-center align-items-center px-3">
-                            <img src="<?= base_url('assets/')?>img/carousel 2.jpg" alt="" class="img-fluid trendingVendorImage">
-                            <div class="trendingVendorTitle h3">Vendor 1</div>
-                        </div>
+                        <?php for ($i=0; $i < 15; $i++) { 
+
+                            if( isset($pict15[$i]['filename']) && $pict15[$i]['filename'] !== '' ){ ?>
+                            <?php $user_id = $info15[$i]['user_id'];$p=0; if($info15[$i]['vendor_acc_flag'] == 'Y'){$p=2;}else if($info15[$i]['tenant_acc_flag'] == 'Y'){$p=3;}?>
+
+                                <a href="<?= base_url('Profile/'.$p.'/'.$user_id)?>" target="_blank">
+                                    <div class="row mb-3 trendingVendor d-flex justify-content-center align-items-center px-3">
+                                        <img src="<?= base_url('assets')?>/upload/foto/<?= $pict15[$i]['filename']?>" alt="" class="img-fluid trendingVendorImage">
+                                        <div class="trendingVendorTitle h3"><?= strtoupper($info15[$i]['fullname']) ?></div>
+                                    </div>
+                                </a>
+
+                            <?php }else{} ?>
+                            
+                        <?php } ?>
                     </div>
                 </div>
             </div>

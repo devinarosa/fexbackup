@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
@@ -15,25 +15,7 @@
   </head>
   <body>
 
-    <section id="nav">
-        <nav class="navbar navbar-expand navbar-dark">
-            <div class="container-xl">
-                <a class="navbar-brand d-none d-sm-block" href="<?=base_url('Dashboard')?>">Halmahera Music School</a>
-                <a class="navbar-brand d-block d-sm-none" href="<?=base_url('Dashboard')?>">HMS</a>
-                  <ul class="navbar-nav ml-auto d-flex align-items-center">
-                    <li class="nav-item dropdown">
-                        <a  href="#" class="dropdown-toggle px-3 text-white pt-1" id="userMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Username</a>
-                        <div class="dropdown-menu" aria-labelledby="userMenu">
-                            <a  href="<?=base_url('PostMessage')?>" class="btn dropdown-item" >Post Message</a>
-                            <a href="<?=base_url('EditProfile')?>" class="btn dropdown-item">Edit profil</a>
-                            <div class="dropdown-divider"></div>
-                            <button class="dropdown-item" type="button"><a href="<?=base_url('Logout')?>" class="text-decoration-none text-dark">Logout</a></button>
-                        </div>
-                    </li>
-                  </ul>
-            </div>
-        </nav>
-    </section>
+  <?php $this->load->view('_partials/navbar.php'); ?>
 
     <section id="hero">
         <div class="container-xl">
@@ -47,10 +29,10 @@
         <div class="container-fluid">
             <div class="row d-flex justify-content-center">
                 <div class="col-sm-12">
-                    <form action="/login/login" method="post">
+                    <form action="<?= base_url('Search')?>" method="GET">
                         <div class="form-group d-flex justify-content-center pr-3 pr-sm-0">
-                            <input style="width: 1000px; border-radius: 20px; padding-left: 20px;" type="text" class="form-control border-1" name="email_username" id="email_username" placeholder="Looking for something ? ">
-                            <i class="fas fa-search fa-1x" style="margin-left: -30px; margin-top: 10px;"></i>
+                            <input style="width: 1000px; border-radius: 20px; padding-left: 20px;" type="text" class="form-control border" name="q" id="email_username" placeholder="Looking for something ? " value="<?= ($q) ? $q : ''; ?>">
+                            <i class="fas fa-search fa-1x submitButton" style="margin-left: -30px; margin-top: 10px;" onclick="document.querySelector('form').submit()"></i>
                         </div>                    
                     </form>
                 </div>
@@ -62,111 +44,48 @@
         <div class="container-xl pb-5">
             <div class="row text-center pb-5">
                 <!-- when search result button isset atau dipencet maka display none div dibawah ini dan kebalikanya dengan di bawahnya lagi -->
-                <div class="col-sm-12"><h3 class="font-weight-bolder">Our Suggestions</h3></div>
                 <!-- show 12 item per row 3 item (desktop), 6 item per row 3 (mobile) -->
                 <div class="col-sm-12"><h3 class="font-weight-bolder text-left pl-4">Search Result :</h3></div>
             </div>
 
             <div class="row">
+            <?php foreach($keywordTenant as $k) : ?>
                 <div class="col-sm-6 container-fluid p-4">
-                    <a href="<?=base_url('assets/')?>schoolProfileTitanium.html">
-                    <div class="row"><img src="<?=base_url('assets/')?>img/Foto tenant.png" alt="" class="img-fluid"></div>
+                    <a href="<?= base_url('Profile/3/'.$k['user_id'])?>">
+                    <div class="row"><img src="<?=base_url('assets/')?>upload/foto/<?= $k['filename']; ?>" alt="" class="w-100" style="height: 370px; object-fit: cover"></div>
                     <div class="row bg-light">
-                        <div class="col-2 p-3 my-2"><img src="<?=base_url('assets/')?>img/schoolLogo.png" alt="" srcset="" class="img-fluid"></div>
+                        <div class="col-2 p-3 my-2"><img src="<?=base_url('assets/')?>img/roles/<?= $k['logo']; ?>" alt="" srcset="" class="img-fluid"></div>
                         <div class="col-10 pl-3 my-3 rounded-bottom">
-                            <div class="h4">Nama Sekolah</div>
-                            <p>Jl. Alamat Alamat no.x kelurahan, kecamatan, kota</p>
+                            <div class="h4"><?= $k['fullname']; ?></div>
+                            <p><?= $k['alamat']; ?></p>
                         </div>
                     </div>
                     </a>
                 </div>
+            <?php endforeach; ?>
+            
+
+            <?php foreach($keywordVendor as $k) : ?>
                 <div class="col-sm-6 container-fluid p-4">
-                    <a href="<?=base_url('assets/')?>schoolProfileTitanium.html">
-                    <div class="row"><img src="<?=base_url('assets/')?>img/Foto tenant.png" alt="" class="img-fluid"></div>
+                    <a href="<?= base_url('Profile/2/'.$k['user_id'])?>">
+                    <div class="row"><img src="<?=base_url('assets/')?>upload/foto/<?= $k['filename']; ?>" alt="" class="w-100" style="height: 370px; object-fit: cover"></div>
                     <div class="row bg-light">
-                        <div class="col-2 p-3 my-2"><img src="<?=base_url('assets/')?>img/schoolLogo.png" alt="" srcset="" class="img-fluid"></div>
+                        <div class="col-2 p-3 my-2"><img src="<?=base_url('assets/')?>img/roles/<?= $k['logo']; ?>" alt="" srcset="" class="img-fluid"></div>
                         <div class="col-10 pl-3 my-3 rounded-bottom">
-                            <div class="h4">Nama Sekolah</div>
-                            <p>Jl. Alamat Alamat no.x kelurahan, kecamatan, kota</p>
+                            <div class="h4"><?= $k['fullname']; ?></div>
+                            <p><?= $k['alamat']; ?></p>
                         </div>
                     </div>
                     </a>
                 </div>
-                <div class="col-sm-6 container-fluid p-4">
-                    <a href="<?=base_url('assets/')?>schoolProfileTitanium.html">
-                    <div class="row"><img src="<?=base_url('assets/')?>img/Foto tenant.png" alt="" class="img-fluid"></div>
-                    <div class="row bg-light">
-                        <div class="col-2 p-3 my-2"><img src="<?=base_url('assets/')?>img/schoolLogo.png" alt="" srcset="" class="img-fluid"></div>
-                        <div class="col-10 pl-3 my-3 rounded-bottom">
-                            <div class="h4">Nama Sekolah</div>
-                            <p>Jl. Alamat Alamat no.x kelurahan, kecamatan, kota</p>
-                        </div>
-                    </div>
-                    </a>
-                </div>
-                <div class="col-sm-6 container-fluid p-4">
-                    <a href="<?=base_url('assets/')?>schoolProfileTitanium.html">
-                    <div class="row"><img src="<?=base_url('assets/')?>img/Foto tenant.png" alt="" class="img-fluid"></div>
-                    <div class="row bg-light">
-                        <div class="col-2 p-3 my-2"><img src="<?=base_url('assets/')?>img/schoolLogo.png" alt="" srcset="" class="img-fluid"></div>
-                        <div class="col-10 pl-3 my-3 rounded-bottom">
-                            <div class="h4">Nama Sekolah</div>
-                            <p>Jl. Alamat Alamat no.x kelurahan, kecamatan, kota</p>
-                        </div>
-                    </div>
-                    </a>
-                </div>
-                <div class="col-sm-6 container-fluid p-4">
-                    <a href="<?=base_url('assets/')?>schoolProfileTitanium.html">
-                    <div class="row"><img src="<?=base_url('assets/')?>img/Foto tenant.png" alt="" class="img-fluid"></div>
-                    <div class="row bg-light">
-                        <div class="col-2 p-3 my-2"><img src="<?=base_url('assets/')?>img/schoolLogo.png" alt="" srcset="" class="img-fluid"></div>
-                        <div class="col-10 pl-3 my-3 rounded-bottom">
-                            <div class="h4">Nama Sekolah</div>
-                            <p>Jl. Alamat Alamat no.x kelurahan, kecamatan, kota</p>
-                        </div>
-                    </div>
-                    </a>
-                </div>
-                <div class="col-sm-6 container-fluid p-4">
-                    <a href="<?=base_url('assets/')?>schoolProfileTitanium.html">
-                    <div class="row"><img src="<?=base_url('assets/')?>img/Foto tenant.png" alt="" class="img-fluid"></div>
-                    <div class="row bg-light">
-                        <div class="col-2 p-3 my-2"><img src="<?=base_url('assets/')?>img/schoolLogo.png" alt="" srcset="" class="img-fluid"></div>
-                        <div class="col-10 pl-3 my-3 rounded-bottom">
-                            <div class="h4">Nama Sekolah</div>
-                            <p>Jl. Alamat Alamat no.x kelurahan, kecamatan, kota</p>
-                        </div>
-                    </div>
-                    </a>
-                </div>
+            <?php endforeach; ?>
             </div>
+            
 
         </div>
     </section>
 
-    <section id="footer">
-        <div class="container-xl py-5 px-4">
-            <div class="row">
-                <div class="col-lg-6 margin">
-                    <div class="h4">About Us</div>
-                    <div class="h6">Halmahera Music School</div>
-                    <div >A Music School located in Semarang City with Yamaha International Curriculum</div>
-                    <div class="social-media margin">
-                        <i class="fab fa-instagram fa-2x"></i>
-                        <i class="fab fa-twitter fa-2x"></i>
-                        <i class="fab fa-facebook-square fa-2x"></i>
-                        <i class="fab fa-youtube fa-2x"></i>
-                        <a href="https://hmssemarang.com" target="_blank"><i class="fab fa-firefox fa-2x"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-6 mt-5">
-                    <div class="back mb-5 lead"><a href="#nav">Back to Top <i class="fas fa-arrow-to-top pl-2"></i></a></div>
-                    <p>© 2020 Halmahera Music School Semarang. All Rights Reserved.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    <?php $this->load->view('_partials/footer.php'); ?>
 
     <!-- Optional JavaScript; choose one of the two! -->
 
